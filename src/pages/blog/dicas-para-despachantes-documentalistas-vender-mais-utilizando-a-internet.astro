@@ -1,0 +1,9 @@
+---
+// src/pages/blog/dicas-para-despachantes-documentalistas-vender-mais-utilizando-a-internet.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'dicas-para-despachantes-documentalistas-vender-mais-utilizando-a-internet')!;
+---
+
+<ArticleView post={post} />

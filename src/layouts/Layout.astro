@@ -1,23 +1,87 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+// src/layouts/Layout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "DOCUMENTALISTA - Software para Despachante Documentalista e Vistorias",
+  description = "O Documentalista é um sistema online simples e eficiente feito para facilitar a vida e o dia-a-dia dos Despachantes de Veículos e empresas de Vistoria."
+} = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DOCUMENTALISTA",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Sistema online para despachantes de veículos e empresas de vistoria."
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / SEO -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DOCUMENTALISTA - Software para Despachantes de Veículos" />
+    <meta property="og:description" content="Sistema online simples e eficiente feito para facilitar o dia a dia de despachantes de veículos e vistorias." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/images/favicon.png" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Ambient Background -->
+    <div class="bg-canvas">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header Component -->
+    <Header />
+
+    <!-- Main Page Content -->
+    <slot />
+
+    <!-- Footer Component -->
+    <Footer />
+
+    <!-- Scripts CDN -->
+    <!-- GSAP -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script is:inline src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <!-- Vanilla Tilt -->
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <!-- Main Logic -->
+    <script is:inline src="/assets/js/main.js"></script>
+  </body>
+</html>

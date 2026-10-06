@@ -1,11 +1,845 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Button from '../components/Button.astro';
 ---
 
 <Layout>
-	<Welcome />
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <!-- Left Content -->
+                <div class="hero-content">
+
+                    <h1 class="g-fade-up g-delay-1">
+                        Sistema Online para <span class="gradient-text">Despachantes de Veículos</span> e Vistorias.
+                    </h1>
+
+                    <p class="subheadline g-fade-up g-delay-2">
+                        O Documentalista é um sistema online simples e eficiente feito para facilitar a vida e o dia-a-dia dos Despachantes de Veículos e empresas de Vistoria.
+                    </p>
+
+                    <div class="hero-ctas g-fade-up g-delay-3">
+                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="secondary">
+                            Experimente 15 dias grátis <i class="fa-solid fa-arrow-right"></i>
+                        </Button>
+                        <Button href="https://wa.me/5547996096690" target="_blank" variant="outline">
+                            Conversar com especialista
+                        </Button>
+                    </div>
+
+                    <div class="trust-box g-fade-up g-delay-4">
+                        <div class="trust-item">
+                            <i class="fa-solid fa-check-circle"></i> 15 Dias grátis para testar
+                        </div>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-check-circle"></i> Sem cartão de crédito
+                        </div>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-check-circle"></i> Cancelamento livre
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="hero-visual-container">
+                    <div class="hero-visual g-fade-in g-delay-5">
+                        <div class="image-wrapper" data-tilt data-tilt-max="5" data-tilt-speed="400"
+                            data-tilt-perspective="1000">
+                            <img src="/assets/images/Deskto-hero-documentalista.png"
+                                alt="Interface do sistema DOCUMENTALISTA em um notebook" width="800" height="600">
+                        </div>
+
+                        <!-- Selo de Experiência -->
+                        <div class="hero-experience-badge">
+                            <div class="badge-icon-gold">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div class="badge-text-content">
+                                <strong>+10 Anos de Experiência</strong>
+                                <span>no mercado de despachantes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Features Section (Abas & Tópicos Estilo ClickGarage) -->
+        <section id="funcionalidades" class="features-section">
+            <div class="container">
+                <div class="features-header scroll-anim text-center" style="margin-bottom: 2.5rem; text-align: center;">
+                    <h2>Projetado para as suas necessidades</h2>
+                    <p class="subheadline" style="max-width: 720px; margin: 0.8rem auto 0 auto;">
+                        Desenvolvemos o Documentalista pensando em tudo o que você precisa para fazer a gestão completa do seu escritório de despachante e vistorias.
+                    </p>
+                </div>
+
+                <!-- Abas de Navegação -->
+                <div class="features-tabs-nav scroll-anim">
+                    <button class="tab-btn active" data-tab="tab-cadastros">Cadastros</button>
+                    <button class="tab-btn" data-tab="tab-os">Ordens de Serviço</button>
+                    <button class="tab-btn" data-tab="tab-documentos">Documentos & Recibos</button>
+                    <button class="tab-btn" data-tab="tab-financeiro">Financeiro</button>
+                    <button class="tab-btn" data-tab="tab-relatorios">Relatórios</button>
+                    <button class="tab-btn" data-tab="tab-seguranca">Consulta Veicular</button>
+                </div>
+
+                <!-- Painéis de Conteúdo das Abas -->
+                <div class="tab-content-container">
+                    <!-- Tab 1: Cadastros -->
+                    <div class="tab-panel active" id="tab-cadastros">
+                        <div class="tab-text-side">
+                            <h3>🚗 Gestão de Clientes & Veículos</h3>
+                            <p>
+                                Oferecemos uma área intuitiva para gestão de clientes e veículos com recursos exclusivos, proporcionando <strong>maior controle, organização e agilidade</strong>. Faça consultas rápidas e acompanhe todo o histórico em um só lugar.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Cadastro simples e rápido por Placa ou CPF/CNPJ</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Histórico completo de proprietários e veículos</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Busca instantânea e organização sem duplicidades</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side">
+                            <img src="/assets/images/Cadastros.png" alt="Gestão de Cadastros" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Ordens de Serviço -->
+                    <div class="tab-panel" id="tab-os">
+                        <div class="tab-text-side">
+                            <h3>📋 Ordens de Serviço & Processos</h3>
+                            <p>
+                                Acompanhe e gerencie todas as <strong>Ordens de Serviço em tempo real</strong>. Controle cada etapa dos processos dos seus clientes, valores cobrados, taxas estaduais e status de conclusão.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Emissão rápida de Ordens de Serviço personalizadas</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Controle de prazos, taxas e etapas do processo</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Histórico transparente para o atendimento do seu escritório</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side">
+                            <img src="/assets/images/ordens-de-servico.png" alt="Ordens de Serviço" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Documentos & Recibos -->
+                    <div class="tab-panel" id="tab-documentos">
+                        <div class="tab-text-side">
+                            <h3>📄 Recibos & Protocolos de Entrada</h3>
+                            <p>
+                                Emita recibos de entrada e devolução de documentos com total rapidez. Proporcione <strong>segurança e transparência para o seu cliente</strong>, protegendo seu escritório contra qualquer tipo de extravio.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Recibos automáticos de entrada de documentos</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Protocolo de devolução assinado e organizado</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Rastreabilidade total das documentações de veículos</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side">
+                            <img src="/assets/images/documentos.png" alt="Recibos e Documentos" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Financeiro -->
+                    <div class="tab-panel" id="tab-financeiro">
+                        <div class="tab-text-side">
+                            <h3>💰 Controle Financeiro Completo</h3>
+                            <p>
+                                Mantenha o caixa do seu escritório sempre equilibrado. Faça o gerenciamento de <strong>recebimentos, honorários, repasses de taxas e lucros</strong> com precisão e facilidade.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Lançamentos rápidos de receitas, despesas e honorários</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Visão clara de faturamento por período e forma de pagamento</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Previsão de receita e fechamento de caixa descomplicado</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side">
+                            <img src="/assets/images/controle-financeiro.png" alt="Controle Financeiro" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Relatórios -->
+                    <div class="tab-panel" id="tab-relatorios">
+                        <div class="tab-text-side">
+                            <h3>📊 Relatórios Gerenciais a 1 Clique</h3>
+                            <p>
+                                Tome decisões estratégicas baseadas em dados reais. Exporte relatórios em <strong>PDF e planilhas de Excel</strong> de clientes, veículos, OS finalizadas e desempenho geral da empresa.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Relatórios em PDF e planilhas exportáveis a um clique</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Filtros avançados por data, cliente, atendente e status</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Visão panorâmica dos resultados do seu negócio</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side">
+                            <img src="/assets/images/relatórios.png" alt="Relatórios Gerenciais" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Tab 6: Consulta Veicular -->
+                    <div class="tab-panel" id="tab-seguranca">
+                        <div class="tab-text-side">
+                            <h3>🔍 Consulta Veicular & Agilidade</h3>
+                            <p>
+                                Acesse informações dos veículos de forma rápida e segura. Garantimos a <strong>integração e agilidade</strong> no dia a dia do seu escritório.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Consulta veicular integrada e simplificada</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Backup diário e automático armazenado na nuvem</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Controle seguro do nível de permissão por usuário</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side">
+                            <img src="/assets/images/Consulta-veicular.png" alt="Consulta Veicular" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultas & Emissões Block -->
+        <section class="consultas-block-section">
+            <div class="container">
+                <div class="consultas-banner-card scroll-anim">
+                    <div class="consultas-header">
+                        <span class="consultas-badge"><i class="fa-solid fa-car-on"></i> CONSULTAS & EMISSÕES INTEGRADAS</span>
+                        <h2>Consultas Veiculares & Documentos em Poucos Segundos</h2>
+                        <p>Complemente a rotina do seu escritório com consultas e emissões rápidas diretamente no sistema:</p>
+                    </div>
+
+                    <div class="consultas-grid">
+                        <div class="consulta-item">
+                            <div class="consulta-icon"><i class="fa-solid fa-file-contract"></i></div>
+                            <div class="consulta-info">
+                                <h4>Emissão de CRLV-e</h4>
+                                <span>Licenciamento digital rápido e seguro</span>
+                            </div>
+                        </div>
+
+                        <div class="consulta-item">
+                            <div class="consulta-icon"><i class="fa-solid fa-file-signature"></i></div>
+                            <div class="consulta-info">
+                                <h4>Emissão de ATPV-e</h4>
+                                <span>Intenção de venda e transferência</span>
+                            </div>
+                        </div>
+
+                        <div class="consulta-item">
+                            <div class="consulta-icon"><i class="fa-solid fa-barcode"></i></div>
+                            <div class="consulta-info">
+                                <h4>Consulta Número do Motor</h4>
+                                <span>Validação completa de motor e chassi</span>
+                            </div>
+                        </div>
+
+                        <div class="consulta-item">
+                            <div class="consulta-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="consulta-info">
+                                <h4>Consulta de Gravame</h4>
+                                <span>Verificação de alienações e restrições</span>
+                            </div>
+                        </div>
+
+                        <div class="consulta-item">
+                            <div class="consulta-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <div class="consulta-info">
+                                <h4>Consulta Veicular Completa</h4>
+                                <span>Histórico de débitos, multas e proprietários</span>
+                            </div>
+                        </div>
+
+                        <div class="consulta-item">
+                            <div class="consulta-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="consulta-info">
+                                <h4>Comunicado de Venda</h4>
+                                <span>Notificação imediata e alertas de processos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultas-cta">
+                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">
+                            Testar 15 dias grátis
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="depoimentos" class="testimonials-section">
+
+            <!-- Infinite Marquee -->
+            <div class="marquee-container">
+                <!-- Track 1 -->
+                <div class="marquee-track">
+                    <!-- Original Set -->
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=1" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">O Documentalista mudou completamente a forma como gerencio minha documentação!</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=5" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Aumentou significativamente a produtividade do meu escritório.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=9" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Consigo manter todos os registros e acompanhar os processos.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=12" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">O suporte oferecido pela equipe do Documentalista é excelente!</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <!-- Duplicated Set for Seamless Loop -->
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=1" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">O Documentalista mudou completamente a forma como gerencio minha documentação!</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=5" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Aumentou significativamente a produtividade do meu escritório.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=9" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Consigo manter todos os registros e acompanhar os processos.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=12" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">O suporte oferecido pela equipe do Documentalista é excelente!</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                </div>
+
+                <!-- Track 2 (Reverse) -->
+                <div class="marquee-track reverse">
+                    <!-- Original Set -->
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=20" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Super intuitivo e de fácil navegação para o dia a dia.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=25" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">O sistema de ordens de serviço e recibos é impecável.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=32" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Nunca mais tivemos extravio de documentos ou atrasos.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=40" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Banco de dados extremamente seguro e ágil.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <!-- Duplicated Set for Seamless Loop -->
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=20" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Super intuitivo e de fácil navegação para o dia a dia.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=25" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">O sistema de ordens de serviço e recibos é impecável.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=32" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Nunca mais tivemos extravio de documentos ou atrasos.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                    <div class="testimonial-pill">
+                        <img src="https://i.pravatar.cc/100?img=40" class="testimonial-avatar" alt="Usuário">
+                        <span class="testimonial-text">Banco de dados extremamente seguro e ágil.</span>
+                        <i class="fa-solid fa-quote-right testimonial-quote"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="testimonials-header scroll-anim">
+                    <h2>Quem usa, recomenda</h2>
+                    <p>Clientes reais que transformaram a gestão do seu escritório com o Documentalista.</p>
+                </div>
+
+                <div class="ratings-grid">
+                    <!-- Google -->
+                    <div class="rating-card scroll-anim">
+                        <div class="rating-logo">
+                            <i class="fa-brands fa-google" style="color: #4285F4"></i> Google
+                        </div>
+                        <div class="rating-score">5<span>/5</span></div>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="rating-desc">Avaliação excelente dos clientes</p>
+                    </div>
+
+                    <!-- ReclameAQUI -->
+                    <div class="rating-card scroll-anim" style="transition-delay: 0.1s;">
+                        <div class="rating-logo">
+                            <span style="color: #4CAF50; font-weight: 800;">Reclame</span><span
+                                style="color: #2196F3; font-weight: 800; margin-left: -2px;">AQUI</span>
+                        </div>
+                        <div class="rating-score" style="font-size: 2.2rem; margin-top: 0.3rem; margin-bottom: 0.8rem;">
+                            100%</div>
+                        <p class="rating-desc" style="margin-top: auto;">Satisfação e reputação positiva</p>
+                    </div>
+
+                    <!-- Apps -->
+                    <div class="rating-card scroll-anim" style="transition-delay: 0.2s;">
+                        <div class="rating-logo" style="gap: 1rem;">
+                            <i class="fa-solid fa-laptop" style="color: #1E668F"></i>
+                            <i class="fa-solid fa-mobile-screen" style="color: #1E668F"></i>
+                        </div>
+                        <div class="rating-score">100%<span> online</span></div>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="rating-desc">Acesso em qualquer dispositivo</p>
+                    </div>
+
+                    <!-- Geral -->
+                    <div class="rating-card scroll-anim" style="transition-delay: 0.3s;">
+                        <div class="rating-logo" style="gap: 0.3rem;">
+                            <i class="fa-solid fa-face-smile" style="color: #FF5A5F"></i>
+                            <i class="fa-solid fa-face-smile" style="color: #FFB400"></i>
+                            <i class="fa-solid fa-face-smile" style="color: #00A699"></i>
+                        </div>
+                        <div class="rating-score">9,8<span>/10</span></div>
+                        <div class="rating-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="rating-desc">Grau de satisfação dos usuários</p>
+                    </div>
+                </div>
+
+                <div class="loved-by scroll-anim" style="transition-delay: 0.4s;">
+                    <div class="loved-text">Utilizado por despachantes de todo o Brasil 💙</div>
+                    <div class="avatar-group">
+                        <img src="https://i.pravatar.cc/100?img=41" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=42" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=43" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=44" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=45" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=46" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=47" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=48" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=49" alt="Usuário">
+                        <img src="https://i.pravatar.cc/100?img=50" alt="Usuário">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Section -->
+        <section id="aplicativo" class="app-section">
+            <div class="container">
+
+                <div class="app-header scroll-anim">
+                    <span class="feature-badge"><i class="fa-solid fa-laptop"></i> SISTEMA PARA DESPACHANTES</span>
+                    <h2>Acessível de qualquer lugar</h2>
+                    <p>Um conjunto de recursos incríveis para a gestão do seu escritório de despachante. Priorizamos a
+                        simplicidade, para que o foco esteja no crescimento do seu negócio.</p>
+                    <div class="hero-ctas justify-center mt-4">
+                        <Button href="https://wa.me/5547996096690" target="_blank" variant="outline">Conversar com especialista</Button>
+                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                    </div>
+                </div>
+
+                <div class="app-visual-container">
+                    <!-- Left Info Card -->
+                    <div class="app-info-card left scroll-anim-left">
+                        <div class="app-card-header">
+                            <div class="app-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <h3>Planeje seu dia</h3>
+                        </div>
+                        <p>Navegue facilmente pelas suas ordens de serviço, acompanhe a evolução das etapas de cada processo e veja a situação de cada documento em tempo real.</p>
+                    </div>
+
+                    <!-- Phone Mockup Graphic -->
+                    <div class="phone-mockup-wrapper scroll-anim">
+                        <img src="/assets/images/mobile-documentalista.png" alt="Sistema Documentalista em Dispositivo Móvel" class="mobile-mockup-img">
+                    </div>
+
+                    <!-- Right Info Card -->
+                    <div class="app-info-card right scroll-anim-right">
+                        <div class="app-card-header">
+                            <div class="app-card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                            <h3>Informações na palma da mão</h3>
+                        </div>
+                        <p>Acesse o cadastro completo dos clientes, histórico de veículos, emitindo recibos e relatórios direto do seu computador ou dispositivo móvel.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Diferenciais Section -->
+        <section id="diferenciais" class="diferenciais-section">
+            <div class="container">
+                <div class="diferenciais-header scroll-anim">
+                    <h2>Nossos diferenciais</h2>
+                    <p>Um bom software se faz com tecnologia de ponta e respeito ao cliente.</p>
+                </div>
+
+                <div class="diferenciais-grid">
+                    <!-- Card 1 -->
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3>Suporte com pessoas reais</h3>
+                        <p>Valorizamos o contato humano e a agilidade. Aqui você fala com uma equipe dedicada a tornar o dia a dia do seu escritório mais eficiente!</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-cloud-arrow-down"></i>
+                        </div>
+                        <h3>Importamos seus dados</h3>
+                        <p>Migramos os dados dos seus clientes e veículos de outros softwares ou planilhas sem dor de cabeça. Fale com nossa equipe para saber mais.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+                        <h3>Treinamento gratuito</h3>
+                        <p>Estamos prontos para te apoiar no início da utilização do sistema. Agende com nosso suporte para esclarecer dúvidas e dominar as ferramentas.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <h3>Não tem fidelidade</h3>
+                        <p>Você continua usando o Documentalista porque aprova o nosso sistema e atendimento, sem contratos de fidelidade ou multas rescisórias.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Segurança para suas informações</h3>
+                        <p>Garantimos a proteção dos seus dados e dos seus clientes com criptografia de ponta e backups diários automáticos armazenados na nuvem.</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3>Melhoria contínua</h3>
+                        <p>Ouvimos a comunidade de despachantes ativamente. Novas funcionalidades e atualizações são lançadas constantemente com base nas suas sugestões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="seguranca" class="security-section">
+            <div class="container">
+                <div class="security-grid">
+
+                    <!-- Left Text Content -->
+                    <div class="security-content scroll-anim-left">
+                        <div class="security-icon">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <h2>Segurança em primeiro lugar</h2>
+                        <div class="divider"></div>
+                        <h3>Tranquilidade total para o armazenamento dos seus documentos e cadastros</h3>
+                        <p>Para que você navegue e armazene suas informações com absoluta tranquilidade, o DOCUMENTALISTA conta com proteção de última geração em seus servidores na nuvem e em sua interface de acesso.</p>
+                        <p>Todo o tráfego de dados é criptografado, garantindo confidencialidade e segurança na comunicação e no registro de veículos e clientes.</p>
+                        <p>Além de rigorosos protocolos de proteção, realizamos backup automático diário na base de dados. Suas informações estão sempre resguardadas contra qualquer imprevisto!</p>
+                    </div>
+
+                    <!-- Right Visual Dashboard -->
+                    <div class="security-visual scroll-anim-right">
+
+                        <!-- Floating Badge 1 -->
+                        <div class="floating-badge badge-top-right">
+                            <div class="badge-icon green"><i class="fa-solid fa-shield"></i></div>
+                            <div class="badge-text">
+                                <strong>99.9% uptime</strong>
+                                <span>Disponibilidade garantida</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Dashboard Window -->
+                        <div class="security-dashboard">
+                            <!-- Window Header -->
+                            <div class="window-header">
+                                <div class="dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="window-logo">
+                                    <i class="fa-solid fa-file-contract"></i> DOCUMENTALISTA
+                                </div>
+                            </div>
+
+                            <!-- Dashboard Content -->
+                            <div class="dashboard-body">
+                                <div class="dashboard-title">
+                                    <div class="dash-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                    <div>
+                                        <h4>Segurança de alto nível</h4>
+                                        <span class="status-success"><i class="fa-solid fa-circle"></i> Seu escritório está protegido!</span>
+                                    </div>
+                                </div>
+
+                                <div class="security-list">
+                                    <!-- Item 1 -->
+                                    <div class="security-item">
+                                        <div class="item-icon bg-green"><i class="fa-solid fa-lock"></i></div>
+                                        <div class="item-info">
+                                            <h5>Criptografia SSL/TLS</h5>
+                                            <span>Tráfego 100% criptografado</span>
+                                        </div>
+                                        <div class="item-status status-green"><i class="fa-solid fa-circle"></i> Ativo
+                                        </div>
+                                    </div>
+                                    <!-- Item 2 -->
+                                    <div class="security-item">
+                                        <div class="item-icon bg-blue"><i class="fa-solid fa-server"></i></div>
+                                        <div class="item-info">
+                                            <h5>Servidores Protegidos</h5>
+                                            <span>Infraestrutura física e virtual blindada</span>
+                                        </div>
+                                        <div class="item-status status-green"><i class="fa-solid fa-circle"></i> Online
+                                        </div>
+                                    </div>
+                                    <!-- Item 3 -->
+                                    <div class="security-item">
+                                        <div class="item-icon bg-purple"><i class="fa-solid fa-clock-rotate-left"></i>
+                                        </div>
+                                        <div class="item-info">
+                                            <h5>Backup Automático Diário</h5>
+                                            <span>Cópia de segurança diária de todos os dados</span>
+                                        </div>
+                                        <div class="item-status status-green"><i class="fa-solid fa-circle"></i>
+                                            Atualizado</div>
+                                    </div>
+                                    <!-- Item 4 -->
+                                    <div class="security-item">
+                                        <div class="item-icon bg-orange"><i class="fa-solid fa-file-shield"></i></div>
+                                        <div class="item-info">
+                                            <h5>Proteção de Dados</h5>
+                                            <span>Conformidade total com privacidade e LGPD</span>
+                                        </div>
+                                        <div class="item-status status-green"><i class="fa-solid fa-circle"></i>
+                                            Conforme</div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-container">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="progress-text">4/4 protegidos</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="floating-badge badge-bottom-left">
+                            <div class="badge-icon teal"><i class="fa-solid fa-list-check"></i></div>
+                            <div class="badge-text">
+                                <strong>Backup diário</strong>
+                                <span>Recuperação rápida de dados</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="diferenciais-section" style="background: rgba(255, 255, 255, 0.02); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+            <div class="container">
+                <div class="diferenciais-header scroll-anim">
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Tire suas dúvidas sobre o software Documentalista.</p>
+                </div>
+
+                <div class="diferenciais-grid">
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+                        <h3>Posso cancelar quando quiser?</h3>
+                        <p>Sim. Você pode cancelar quando quiser. Só pague enquanto usar e estiver satisfeito com o sistema.</p>
+                    </div>
+
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3>Além da mensalidade tenho algum custo a mais?</h3>
+                        <p>Você só paga a mensalidade de acordo com a quantidade de usuários contratada para a sua empresa.</p>
+                    </div>
+
+                    <div class="diferencial-card scroll-anim">
+                        <div class="diferencial-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Como é garantida a segurança dos dados?</h3>
+                        <p>O Documentalista utiliza criptografia avançada e backups diários automáticos para resguardar todos os arquivos e cadastros do seu escritório.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="planos" class="pricing-section">
+            <div class="container">
+                <div class="pricing-header scroll-anim">
+                    <h2>Planos e Preços Documentalista</h2>
+                    <p>Feito especialmente para Despachantes de Veículos e Vistorias. Escolha a opção ideal para a sua equipe.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Plan 1: 1 Usuário -->
+                    <div class="pricing-card scroll-anim">
+                        <div class="plan-name">1 Usuário</div>
+                        <div class="plan-desc">Ideal para despachantes autônomos e pequenos escritórios.</div>
+                        <div class="plan-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">54,90</span>
+                            <span class="period">/mês</span>
+                        </div>
+                        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted, #888); margin-top: -0.5rem; margin-bottom: 1rem;">
+                            ou R$ 49,90/mês no plano anual (R$ 598,80)
+                        </p>
+                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="outline" class="plan-btn">Testar 15 dias grátis</Button>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> Cadastro de 1 empresa</li>
+                                <li><i class="fa-solid fa-check"></i> Até 2 GB de armazenamento</li>
+                                <li><i class="fa-solid fa-check"></i> Todas as funcionalidades inclusas</li>
+                                <li><i class="fa-solid fa-check"></i> Ordens de serviço e recibos</li>
+                                <li><i class="fa-solid fa-check"></i> Relatórios gerenciais em PDF/Excel</li>
+                                <li><i class="fa-solid fa-check"></i> Suporte técnico e atualizações</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plan 2: 2 a 5 Usuários (Highlighted) -->
+                    <div class="pricing-card popular scroll-anim">
+                        <div class="popular-badge">Mais Escolhido</div>
+                        <div class="plan-name">2 a 5 Usuários</div>
+                        <div class="plan-desc">A solução completa para escritórios com equipe em crescimento.</div>
+                        <div class="plan-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">43,90</span>
+                            <span class="period">/mês por usuário</span>
+                        </div>
+                        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted, #888); margin-top: -0.5rem; margin-bottom: 1rem;">
+                            ou R$ 39,90/mês no plano anual (R$ 478,80)
+                        </p>
+                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary" class="plan-btn">Testar 15 dias grátis</Button>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> Cadastro de 1 matriz e 1 filial</li>
+                                <li><i class="fa-solid fa-check"></i> Até 5 GB de armazenamento</li>
+                                <li><i class="fa-solid fa-check"></i> Todas as funcionalidades inclusas</li>
+                                <li><i class="fa-solid fa-check"></i> Gestão de usuários e permissões</li>
+                                <li><i class="fa-solid fa-check"></i> Suporte prioritário</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Plan 3: Acima de 5 Usuários -->
+                    <div class="pricing-card scroll-anim">
+                        <div class="plan-name">Acima de 5 Usuários</div>
+                        <div class="plan-desc">Para grandes empresas e redes de despachantes que buscam máxima capacidade.</div>
+                        <div class="plan-price">
+                            <span class="currency">R$</span>
+                            <span class="amount">38,90</span>
+                            <span class="period">/mês por usuário</span>
+                        </div>
+                        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted, #888); margin-top: -0.5rem; margin-bottom: 1rem;">
+                            ou R$ 32,90/mês no plano anual (R$ 394,80)
+                        </p>
+                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="outline" class="plan-btn">Testar 15 dias grátis</Button>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> Cadastro ilimitado de empresas</li>
+                                <li><i class="fa-solid fa-check"></i> Até 8 GB de armazenamento</li>
+                                <li><i class="fa-solid fa-check"></i> Todas as funcionalidades inclusas</li>
+                                <li><i class="fa-solid fa-check"></i> Suporte VIP e gerente dedicado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contato" class="cta-section">
+            <div class="container">
+                <div class="cta-card scroll-anim">
+                    <div class="cta-content">
+                        <!-- Avatares -->
+                        <div class="cta-avatars">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Especialista de Atendimento 1">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Especialista de Atendimento 2">
+                            <img src="https://i.pravatar.cc/150?img=8" alt="Especialista de Atendimento 3">
+                        </div>
+
+                        <div class="cta-authority-badge">
+                            <i class="fa-solid fa-award"></i>
+                            <span>Mais de 10 Anos de Experiência no Mercado de Despachantes</span>
+                        </div>
+
+                        <h2>Estamos aqui para te ajudar com segurança e experiência!</h2>
+                        <p>Com <strong>mais de 10 anos de atuação no mercado de despachantes</strong>, o Documentalista é garantia de <strong>credibilidade, estabilidade e proteção total dos seus dados</strong>. Descubra como simplificar o dia a dia da sua empresa com quem realmente entende do assunto. Entre em contato conosco! 💙</p>
+
+                        <Button href="https://wa.me/5547996096690" target="_blank" variant="white">
+                            <i class="fa-brands fa-whatsapp"></i> Conversar no WhatsApp
+                        </Button>
+
+                        <div class="cta-trust-highlights">
+                            <div class="cta-trust-item"><i class="fa-solid fa-shield-halved"></i> +10 Anos de Tradição</div>
+                            <div class="cta-trust-item"><i class="fa-solid fa-lock"></i> Segurança & Backup em Nuvem</div>
+                            <div class="cta-trust-item"><i class="fa-solid fa-headset"></i> Atendimento por Pessoas Reais</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </Layout>

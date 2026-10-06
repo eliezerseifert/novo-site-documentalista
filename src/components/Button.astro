@@ -1,0 +1,36 @@
+---
+// src/components/Button.astro
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'white';
+  class?: string;
+  target?: string;
+  rel?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  variant = 'primary',
+  class: className = '',
+  target,
+  rel,
+  ...rest
+} = Astro.props;
+
+const variantClass = variant === 'white' ? 'btn-white' : `btn btn-${variant}`;
+const computedClasses = [variantClass, className].filter(Boolean).join(' ');
+const computedRel = target === '_blank' && !rel ? 'noopener noreferrer' : rel;
+---
+
+{
+  href ? (
+    <a href={href} class={computedClasses} target={target} rel={computedRel} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button class={computedClasses} {...rest}>
+      <slot />
+    </button>
+  )
+}

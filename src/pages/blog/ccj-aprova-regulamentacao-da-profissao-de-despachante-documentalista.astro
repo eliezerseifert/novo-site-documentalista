@@ -1,0 +1,9 @@
+---
+// src/pages/blog/ccj-aprova-regulamentacao-da-profissao-de-despachante-documentalista.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'ccj-aprova-regulamentacao-da-profissao-de-despachante-documentalista')!;
+---
+
+<ArticleView post={post} />

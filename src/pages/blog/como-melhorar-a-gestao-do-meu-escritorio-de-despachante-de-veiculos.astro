@@ -1,0 +1,9 @@
+---
+// src/pages/blog/como-melhorar-a-gestao-do-meu-escritorio-de-despachante-de-veiculos.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'como-melhorar-a-gestao-do-meu-escritorio-de-despachante-de-veiculos')!;
+---
+
+<ArticleView post={post} />

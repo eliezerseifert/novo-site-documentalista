@@ -1,0 +1,9 @@
+---
+// src/pages/blog/a-importancia-de-um-bom-software-online-para-despachante-documentalista.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'a-importancia-de-um-bom-software-online-para-despachante-documentalista')!;
+---
+
+<ArticleView post={post} />

@@ -1,0 +1,9 @@
+---
+// src/pages/blog/como-trabalhar-com-servicos-de-despachante.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'como-trabalhar-com-servicos-de-despachante')!;
+---
+
+<ArticleView post={post} />

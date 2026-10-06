@@ -1,0 +1,9 @@
+---
+// src/pages/blog/5-recursos-online-para-o-despachante-documentalista.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === '5-recursos-online-para-o-despachante-documentalista')!;
+---
+
+<ArticleView post={post} />
