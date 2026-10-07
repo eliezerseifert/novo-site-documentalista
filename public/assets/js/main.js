@@ -148,4 +148,115 @@
                 gsap.to('.blob-1', { x: x, y: y, duration: 1, ease: 'power1.out' });
                 gsap.to('.blob-2', { x: -x * 1.5, y: -y * 1.5, duration: 1, ease: 'power1.out' });
             });
+
+            // 6. Mobile Navigation Drawer & Anchor Links
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMobileMenu() {
+                if (!mobileMenuDrawer) return;
+                mobileMenuDrawer.classList.add('is-open');
+                if (mobileMenuOverlay) mobileMenuOverlay.classList.add('is-open');
+                if (mobileToggle) {
+                    mobileToggle.setAttribute('aria-expanded', 'true');
+                    mobileToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                }
+                document.body.classList.add('mobile-menu-locked');
+                lenis.stop();
+            }
+
+            function closeMobileMenu() {
+                if (!mobileMenuDrawer) return;
+                mobileMenuDrawer.classList.remove('is-open');
+                if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('is-open');
+                if (mobileToggle) {
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                    mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+                document.body.classList.remove('mobile-menu-locked');
+                lenis.start();
+            }
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (mobileMenuDrawer && mobileMenuDrawer.classList.contains('is-open')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+            }
+
+            if (mobileClose) {
+                mobileClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeMobileMenu();
+                });
+            }
+
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            }
+
+            // Close with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenuDrawer && mobileMenuDrawer.classList.contains('is-open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close on window resize if transitioning to desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024 && mobileMenuDrawer && mobileMenuDrawer.classList.contains('is-open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // 7. Smooth Anchor Navigation (Desktop & Mobile)
+            const isHomePage = window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.endsWith('/index.html');
+
+            document.querySelectorAll('a[href*="#"]').forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (!href) return;
+
+                    const hashIndex = href.indexOf('#');
+                    if (hashIndex === -1) return;
+
+                    const hash = href.substring(hashIndex);
+                    if (!hash || hash === '#') return;
+
+                    const targetPath = href.substring(0, hashIndex);
+                    const isSamePage = !targetPath || targetPath === '/' || targetPath === window.location.pathname;
+
+                    if (isHomePage && isSamePage) {
+                        const targetElem = document.querySelector(hash);
+                        if (targetElem) {
+                            e.preventDefault();
+                            closeMobileMenu();
+                            lenis.scrollTo(targetElem, { offset: -80, duration: 1.2 });
+                            history.pushState(null, '', hash);
+                            return;
+                        }
+                    }
+
+                    // Se estiver em outra página e clicou no menu mobile, apenas fecha o menu
+                    closeMobileMenu();
+                });
+            });
+
+            // Scroll suave se entrar diretamente com hash na URL
+            if (window.location.hash) {
+                const targetElem = document.querySelector(window.location.hash);
+                if (targetElem) {
+                    setTimeout(() => {
+                        lenis.scrollTo(targetElem, { offset: -80, duration: 1.2 });
+                    }, 400);
+                }
+            }
         });

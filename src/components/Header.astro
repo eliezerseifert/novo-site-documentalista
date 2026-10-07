@@ -9,12 +9,13 @@ import Button from './Button.astro';
             <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" style="width: 250px; height: auto;">
         </a>
 
-        <nav class="nav-menu" aria-label="Main Navigation">
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu" aria-label="Navegação Principal">
             <a href="/#funcionalidades" class="nav-link">Recursos</a>
             <a href="/#diferenciais" class="nav-link">Diferenciais</a>
             <a href="/#depoimentos" class="nav-link">Depoimentos</a>
-            <a href="/#faq" class="nav-link">FAQ</a>
             <a href="/#planos" class="nav-link">Planos</a>
+            <a href="/blog" class="nav-link">Blog</a>
         </nav>
 
         <div class="header-actions">
@@ -22,8 +23,139 @@ import Button from './Button.astro';
             <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Teste 15 dias grátis</Button>
         </div>
 
-        <button class="mobile-toggle" aria-label="Abrir menu">
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobileMenuDrawer">
             <i class="fa-solid fa-bars"></i>
         </button>
     </div>
 </header>
+
+<!-- Mobile Navigation Drawer & Backdrop -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
+
+<aside class="mobile-menu-drawer" id="mobileMenuDrawer" aria-label="Menu de Navegação Mobile" aria-hidden="true">
+    <div class="mobile-menu-header">
+        <a href="/" class="logo" aria-label="DOCUMENTALISTA Home">
+            <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" style="width: 180px; height: auto;">
+        </a>
+        <button class="mobile-menu-close" id="mobileClose" type="button" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="mobile-menu-content">
+        <span class="mobile-menu-label">Categorias & Navegação</span>
+        <nav class="mobile-nav-list" aria-label="Links do Menu Mobile">
+            <a href="/#home" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Início</strong>
+                    <small>Visão geral e apresentação</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#funcionalidades" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Recursos & Módulos</strong>
+                    <small>Ordens de serviço, cadastros e relatórios</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#diferenciais" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Diferenciais</strong>
+                    <small>Simplicidade, rapidez e foco em despachantes</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#depoimentos" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-comment-dots"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Depoimentos</strong>
+                    <small>O que nossos clientes dizem</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#aplicativo" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Aplicativo Mobile</strong>
+                    <small>Acesse seu escritório de qualquer lugar</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#seguranca" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Segurança & Nuvem</strong>
+                    <small>AWS Cloud, backups diários e LGPD</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#planos" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-tag"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Planos & Preços</strong>
+                    <small>A partir de R$ 99/mês sem fidelidade</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/blog" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-newspaper"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Blog & Dicas</strong>
+                    <small>Artigos sobre gestão e regulamentação</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+
+            <a href="/#contato" class="mobile-nav-item">
+                <span class="mobile-nav-item-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span class="mobile-nav-item-info">
+                    <strong>Contato & Suporte</strong>
+                    <small>Fale com nossa equipe de especialistas</small>
+                </span>
+                <i class="fa-solid fa-chevron-right mobile-nav-item-arrow"></i>
+            </a>
+        </nav>
+
+        <div class="mobile-drawer-actions">
+            <a href="https://app.documentalista.com.br/tenants/register" target="_blank" class="mobile-drawer-btn mobile-drawer-btn-primary">
+                <i class="fa-solid fa-rocket"></i> Teste 15 dias grátis
+            </a>
+            <a href="https://app.documentalista.com.br/" target="_blank" class="mobile-drawer-btn mobile-drawer-btn-outline">
+                <i class="fa-solid fa-right-to-bracket"></i> Acessar Sistema
+            </a>
+            <a href="https://wa.me/5547996096690" target="_blank" class="mobile-drawer-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Falar com Especialista
+            </a>
+        </div>
+    </div>
+</aside>
