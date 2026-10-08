@@ -602,6 +602,26 @@
             z-index: 10;
         }
 
+        /* Hero Pill Badge (Estilo moderno com fundo suave, exclusivo mobile) */
+        .hero-pill-badge {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 0.42rem 1.15rem;
+            border-radius: 9999px;
+            background: rgba(61, 181, 180, 0.12);
+            color: #0b7285;
+            border: 1px solid rgba(61, 181, 180, 0.22);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            width: fit-content;
+            align-self: flex-start;
+            transition: all 0.3s var(--ease-premium);
+        }
+
         .hero h1 {
             font-size: clamp(2rem, 3.5vw, 3.25rem);
             font-weight: 800;
@@ -1089,6 +1109,38 @@
             color: #ffffff;
             margin-bottom: 0.2rem;
             line-height: 1.3;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tag-em-breve {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            background: rgba(245, 158, 11, 0.25);
+            color: #fef3c7;
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            vertical-align: middle;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .tag-em-breve::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fbbf24;
+            box-shadow: 0 0 6px #f59e0b;
         }
 
         .consulta-info span {
@@ -2423,37 +2475,69 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 3.5rem;
             }
+            .consultas-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.15rem;
+            }
         }
 
         @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 5.5rem 0 1rem 0;
+            }
             .hero-grid {
                 flex-direction: column;
-                text-align: center;
-                gap: 4rem;
-                justify-content: center;
-                padding-bottom: 4rem;
+                text-align: left;
+                gap: 1.5rem;
+                justify-content: flex-start;
+                padding-bottom: 0.5rem;
             }
             .hero-content {
                 width: 100%;
-                align-items: center;
-                padding-top: 2rem;
+                align-items: flex-start;
+                text-align: left;
+                padding-top: 0.5rem;
+            }
+            .hero-pill-badge {
+                display: inline-flex;
+                margin-bottom: 1.25rem;
+                align-self: flex-start;
+            }
+            .hero h1 {
+                text-align: left;
+                margin-bottom: 1rem;
             }
             .hero .subheadline {
                 max-width: 100%;
+                text-align: left;
+                margin-bottom: 1.75rem;
             }
             .hero-ctas {
-                flex-direction: row;
-                justify-content: center;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
                 width: 100%;
+                gap: 0.75rem;
+                margin-bottom: 1.75rem;
             }
             .hero-ctas .btn {
-                width: auto;
-                padding: 0.75rem 1rem;
-                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
+                padding: 0.85rem 1.25rem;
+                font-size: 0.95rem;
             }
             .trust-box {
                 flex-direction: column;
-                gap: 1rem;
+                align-items: flex-start;
+                gap: 0.75rem;
+                width: 100%;
+            }
+            .trust-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                text-align: left;
             }
             .hero-visual-container {
                 position: relative;
@@ -2461,14 +2545,17 @@
                 right: 0;
                 top: 0;
                 transform: none;
-                margin-top: 2rem;
+                margin-top: 0.5rem;
             }
             .hero-experience-badge {
-                position: relative;
-                bottom: 0;
-                left: 0;
-                margin: 1.5rem auto 0 auto;
-                width: fit-content;
+                display: none;
+            }
+            .features-section {
+                padding-top: 1rem;
+                padding-bottom: 2rem;
+            }
+            .features-header {
+                margin-bottom: 1.75rem !important;
             }
             .features-tabs-nav {
                 justify-content: flex-start;
@@ -2485,12 +2572,39 @@
             .tab-text-side h3 {
                 font-size: 1.6rem;
             }
+            /* Depoimentos & Avaliações Mobile */
+            .testimonials-section {
+                padding: 3.5rem 0 1.5rem 0;
+            }
+            .marquee-container {
+                margin-bottom: 2.5rem;
+            }
             .ratings-grid { grid-template-columns: 1fr; }
+            .loved-by {
+                margin-top: 1.5rem;
+            }
             .avatar-group img { width: 40px; height: 40px; margin-left: -10px; }
             
+            /* Acessível de qualquer lugar (App Section) - Mais para o topo */
+            .app-section {
+                padding: 1.5rem 0 2.5rem 0;
+            }
+            .app-header {
+                margin-bottom: 1.5rem;
+            }
+            .app-header h2 {
+                font-size: clamp(1.7rem, 4.5vw, 2.2rem);
+                margin-bottom: 0.75rem;
+            }
+            .app-header p {
+                font-size: 0.95rem;
+                margin-bottom: 1.25rem;
+                padding: 0 0.5rem;
+            }
             .app-visual-container {
                 flex-direction: column;
-                gap: 2.5rem;
+                gap: 2rem;
+                min-height: auto;
             }
             .app-info-card {
                 position: relative;
@@ -2506,7 +2620,80 @@
                 max-width: 320px;
                 margin: 0 auto;
             }
-            .diferenciais-grid { grid-template-columns: 1fr; }
+
+            /* Nossos Diferenciais - Mais para o topo */
+            .diferenciais-section {
+                padding: 2rem 0 2.5rem 0;
+            }
+            .diferenciais-header {
+                margin-bottom: 1.75rem;
+                padding: 0 0.5rem;
+            }
+            .diferenciais-header h2 {
+                font-size: clamp(1.7rem, 4.5vw, 2.2rem);
+                margin-bottom: 0.5rem;
+            }
+            .diferenciais-header p {
+                font-size: 0.95rem;
+            }
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .diferencial-card {
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+
+            /* Segurança em Primeiro Lugar - Centralizado com respiro equilibrado */
+            .security-section {
+                padding: 2.5rem 0 3rem 0;
+            }
+            .security-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .security-content {
+                padding: 0 1.5rem;
+                text-align: center;
+                margin: 0 auto;
+                max-width: 580px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .security-icon {
+                margin: 0 auto 1.25rem auto;
+                width: 56px;
+                height: 56px;
+                font-size: 1.5rem;
+            }
+            .security-content h2 {
+                font-size: clamp(1.65rem, 5vw, 2.2rem);
+                text-align: center;
+                margin: 0 auto 1rem auto;
+                line-height: 1.25;
+            }
+            .security-content .divider {
+                width: 48px;
+                height: 4px;
+                margin: 0 auto 1.25rem auto;
+            }
+            .security-content h3 {
+                font-size: 1.15rem;
+                text-align: center;
+                margin: 0 auto 1.25rem auto;
+                line-height: 1.45;
+            }
+            .security-content p {
+                font-size: 0.95rem;
+                line-height: 1.65;
+                text-align: center;
+                margin: 0 auto 1rem auto;
+            }
+            .security-visual {
+                padding: 0.5rem 0;
+                width: 100%;
+            }
             
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -2523,9 +2710,99 @@
             .header .logo img {
                 width: 190px !important;
             }
+
+            /* Bloco Consultas Veiculares empilhado e visível no mobile */
+            .consultas-block-section {
+                padding: 1.5rem 0 2rem 0;
+            }
+            .consultas-banner-card {
+                padding: 2.25rem 1.25rem;
+                border-radius: 24px;
+            }
+            .consultas-header {
+                margin-bottom: 1.75rem;
+                padding: 0 0.25rem;
+            }
+            .consultas-header h2 {
+                font-size: 1.6rem;
+                line-height: 1.25;
+            }
+            .consultas-header p {
+                font-size: 0.95rem;
+            }
+            .consultas-grid {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+                width: 100%;
+            }
+            .consulta-item {
+                width: 100%;
+                padding: 1.1rem 1.25rem;
+                gap: 0.9rem;
+                box-sizing: border-box;
+            }
+            .consulta-info {
+                flex: 1;
+                min-width: 0;
+            }
+            .consulta-info h4 {
+                font-size: 0.98rem;
+                line-height: 1.35;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+            }
+            .consulta-info span {
+                font-size: 0.82rem;
+                line-height: 1.4;
+            }
+            .consultas-cta {
+                margin-top: 1.75rem;
+            }
+            .consultas-cta .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.95rem 1.5rem;
+                font-size: 0.95rem;
+            }
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding-top: 5rem;
+                padding-bottom: 0.5rem;
+            }
+            .features-section {
+                padding-top: 0.5rem;
+            }
+            .app-section {
+                padding: 1.25rem 0 2rem 0;
+            }
+            .diferenciais-section {
+                padding: 1.5rem 0 2rem 0;
+            }
+            .security-section {
+                padding: 2rem 0 2.5rem 0;
+            }
+            .security-content {
+                padding: 0 0.75rem;
+            }
+            .consultas-banner-card {
+                padding: 2rem 1rem;
+                border-radius: 20px;
+            }
+            .consulta-item {
+                padding: 1rem 0.9rem;
+                gap: 0.75rem;
+            }
+            .consulta-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 1.1rem;
+                border-radius: 12px;
+            }
+            .consultas-header h2 {
+                font-size: 1.45rem;
+            }
             .mobile-menu-drawer {
                 max-width: 100%;
             }

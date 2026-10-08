@@ -13,6 +13,10 @@ import Button from '../components/Button.astro';
                 <!-- Left Content -->
                 <div class="hero-content">
 
+                    <div class="hero-pill-badge g-fade-up">
+                        <span>10 Anos de Experiência</span>
+                    </div>
+
                     <h1 class="g-fade-up g-delay-1">
                         Sistema Online para <span class="gradient-text">Despachantes de Veículos</span> e Vistorias.
                     </h1>
@@ -22,7 +26,7 @@ import Button from '../components/Button.astro';
                     </p>
 
                     <div class="hero-ctas g-fade-up g-delay-3">
-                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="secondary">
+                        <Button href="https://app.documentalista.com.br/register" target="_blank" variant="secondary">
                             Experimente 15 dias grátis <i class="fa-solid fa-arrow-right"></i>
                         </Button>
                         <Button href="https://wa.me/5547991278324" target="_blank" variant="outline">
@@ -48,8 +52,11 @@ import Button from '../components/Button.astro';
                     <div class="hero-visual g-fade-in g-delay-5">
                         <div class="image-wrapper" data-tilt data-tilt-max="5" data-tilt-speed="400"
                             data-tilt-perspective="1000">
-                            <img src="/assets/images/Deskto-hero-documentalista.png"
-                                alt="Interface do sistema DOCUMENTALISTA em um notebook" width="800" height="600">
+                            <picture>
+                                <source srcset="/assets/images/Deskto-hero-documentalista.webp" type="image/webp">
+                                <img src="/assets/images/Deskto-hero-documentalista.png"
+                                    alt="Interface do sistema DOCUMENTALISTA em um notebook" width="800" height="533" fetchpriority="high" decoding="async">
+                            </picture>
                         </div>
 
                         <!-- Selo de Experiência -->
@@ -102,10 +109,13 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Histórico completo de proprietários e veículos</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Busca instantânea e organização sem duplicidades</li>
                             </ul>
-                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
-                            <img src="/assets/images/Cadastros.png" alt="Gestão de Cadastros" loading="lazy">
+                            <picture>
+                                <source srcset="/assets/images/Cadastros.webp" type="image/webp">
+                                <img src="/assets/images/Cadastros.png" alt="Gestão de Cadastros" width="800" height="466" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
 
@@ -121,10 +131,13 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Controle de prazos, taxas e etapas do processo</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Histórico transparente para o atendimento do seu escritório</li>
                             </ul>
-                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
-                            <img src="/assets/images/ordens-de-servico.png" alt="Ordens de Serviço" loading="lazy">
+                            <picture>
+                                <source srcset="/assets/images/ordens-de-servico.webp" type="image/webp">
+                                <img src="/assets/images/ordens-de-servico.png" alt="Ordens de Serviço" width="800" height="457" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
 
@@ -140,10 +153,13 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Protocolo de devolução assinado e organizado</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Rastreabilidade total das documentações de veículos</li>
                             </ul>
-                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
-                            <img src="/assets/images/documentos.png" alt="Recibos e Documentos" loading="lazy">
+                            <picture>
+                                <source srcset="/assets/images/documentos.webp" type="image/webp">
+                                <img src="/assets/images/documentos.png" alt="Recibos e Documentos" width="800" height="453" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
 
@@ -159,10 +175,13 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Visão clara de faturamento por período e forma de pagamento</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Previsão de receita e fechamento de caixa descomplicado</li>
                             </ul>
-                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
-                            <img src="/assets/images/controle-financeiro.png" alt="Controle Financeiro" loading="lazy">
+                            <picture>
+                                <source srcset="/assets/images/controle-financeiro.webp" type="image/webp">
+                                <img src="/assets/images/controle-financeiro.png" alt="Controle Financeiro" width="800" height="458" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
 
@@ -178,10 +197,13 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Filtros avançados por data, cliente, atendente e status</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Visão panorâmica dos resultados do seu negócio</li>
                             </ul>
-                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
-                            <img src="/assets/images/relatórios.png" alt="Relatórios Gerenciais" loading="lazy">
+                            <picture>
+                                <source srcset="/assets/images/relatorios.webp" type="image/webp">
+                                <img src="/assets/images/relatorios.png" alt="Relatórios Gerenciais" width="800" height="458" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
 
@@ -197,10 +219,13 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Backup diário e automático armazenado na nuvem</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Controle seguro do nível de permissão por usuário</li>
                             </ul>
-                            <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
-                            <img src="/assets/images/Consulta-veicular.png" alt="Consulta Veicular" loading="lazy">
+                            <picture>
+                                <source srcset="/assets/images/Consulta-veicular.webp" type="image/webp">
+                                <img src="/assets/images/Consulta-veicular.png" alt="Consulta Veicular" width="800" height="456" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -245,7 +270,7 @@ import Button from '../components/Button.astro';
                         <div class="consulta-item">
                             <div class="consulta-icon"><i class="fa-solid fa-shield-halved"></i></div>
                             <div class="consulta-info">
-                                <h4>Consulta de Gravame</h4>
+                                <h4>Consulta de Gravame <span class="tag-em-breve">Em breve</span></h4>
                                 <span>Verificação de alienações e restrições</span>
                             </div>
                         </div>
@@ -253,7 +278,7 @@ import Button from '../components/Button.astro';
                         <div class="consulta-item">
                             <div class="consulta-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                             <div class="consulta-info">
-                                <h4>Consulta Veicular Completa</h4>
+                                <h4>Consulta Veicular Completa <span class="tag-em-breve">Em breve</span></h4>
                                 <span>Histórico de débitos, multas e proprietários</span>
                             </div>
                         </div>
@@ -261,14 +286,14 @@ import Button from '../components/Button.astro';
                         <div class="consulta-item">
                             <div class="consulta-icon"><i class="fa-solid fa-bullhorn"></i></div>
                             <div class="consulta-info">
-                                <h4>Comunicado de Venda</h4>
+                                <h4>Comunicado de Venda <span class="tag-em-breve">Em breve</span></h4>
                                 <span>Notificação imediata e alertas de processos</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="consultas-cta">
-                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">
+                        <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">
                             Testar 15 dias grátis
                         </Button>
                     </div>
@@ -467,7 +492,7 @@ import Button from '../components/Button.astro';
                         simplicidade, para que o foco esteja no crescimento do seu negócio.</p>
                     <div class="hero-ctas justify-center mt-4">
                         <Button href="https://wa.me/5547991278324" target="_blank" variant="outline">Conversar com especialista</Button>
-                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                     </div>
                 </div>
 
@@ -483,7 +508,10 @@ import Button from '../components/Button.astro';
 
                     <!-- Phone Mockup Graphic -->
                     <div class="phone-mockup-wrapper scroll-anim">
-                        <img src="/assets/images/mobile-documentalista.png" alt="Sistema Documentalista em Dispositivo Móvel" class="mobile-mockup-img">
+                        <picture>
+                            <source srcset="/assets/images/mobile-documentalista.webp" type="image/webp">
+                            <img src="/assets/images/mobile-documentalista.png" alt="Sistema Documentalista em Dispositivo Móvel" class="mobile-mockup-img" width="600" height="642" loading="lazy" decoding="async">
+                        </picture>
                     </div>
 
                     <!-- Right Info Card -->
@@ -744,7 +772,7 @@ import Button from '../components/Button.astro';
                         <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted, #888); margin-top: -0.5rem; margin-bottom: 1rem;">
                             ou R$ 49,90/mês no plano anual (R$ 598,80)
                         </p>
-                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="outline" class="plan-btn">Testar 15 dias grátis</Button>
+                        <Button href="https://app.documentalista.com.br/register" target="_blank" variant="outline" class="plan-btn">Testar 15 dias grátis</Button>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fa-solid fa-check"></i> Cadastro de 1 empresa</li>
@@ -770,7 +798,7 @@ import Button from '../components/Button.astro';
                         <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted, #888); margin-top: -0.5rem; margin-bottom: 1rem;">
                             ou R$ 39,90/mês no plano anual (R$ 478,80)
                         </p>
-                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="primary" class="plan-btn">Testar 15 dias grátis</Button>
+                        <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary" class="plan-btn">Testar 15 dias grátis</Button>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fa-solid fa-check"></i> Cadastro de 1 matriz e 1 filial</li>
@@ -794,7 +822,7 @@ import Button from '../components/Button.astro';
                         <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted, #888); margin-top: -0.5rem; margin-bottom: 1rem;">
                             ou R$ 32,90/mês no plano anual (R$ 394,80)
                         </p>
-                        <Button href="https://app.documentalista.com.br/tenants/register" target="_blank" variant="outline" class="plan-btn">Testar 15 dias grátis</Button>
+                        <Button href="https://app.documentalista.com.br/register" target="_blank" variant="outline" class="plan-btn">Testar 15 dias grátis</Button>
                         <div class="plan-features">
                             <ul>
                                 <li><i class="fa-solid fa-check"></i> Cadastro ilimitado de empresas</li>
