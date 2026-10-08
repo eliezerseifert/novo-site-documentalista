@@ -2487,6 +2487,29 @@
         }
 
         @media (max-width: 768px) {
+            /* Desativa animações contínuas de blur nos blobs em celulares para economizar CPU/GPU e acelerar carregamento */
+            .blob {
+                filter: blur(50px);
+                animation: none !important;
+                will-change: auto;
+                opacity: 0.35;
+            }
+            .blob-1 {
+                width: 300px;
+                height: 300px;
+                top: -10%;
+                right: -15%;
+            }
+            .blob-2 {
+                width: 260px;
+                height: 260px;
+                bottom: 0%;
+                left: -15%;
+            }
+            .blob-3 {
+                display: none;
+            }
+
             .hero {
                 min-height: auto;
                 padding: 5.5rem 0 1rem 0;

@@ -6,7 +6,7 @@ import Button from './Button.astro';
 <header class="header" id="header" transition:persist>
     <div class="container header-inner">
         <a href="/" class="logo" aria-label="DOCUMENTALISTA Home">
-            <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" style="width: 250px; height: auto;">
+            <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" width="250" height="50" style="width: 250px; height: auto;" fetchpriority="high">
         </a>
 
         <!-- Desktop Navigation -->
@@ -34,7 +34,7 @@ import Button from './Button.astro';
 <aside class="mobile-menu-drawer" id="mobileMenuDrawer" aria-label="Menu de Navegação Mobile" aria-hidden="true" transition:persist>
     <div class="mobile-menu-header">
         <a href="/" class="logo" aria-label="DOCUMENTALISTA Home">
-            <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" style="width: 180px; height: auto;">
+            <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" width="180" height="36" style="width: 180px; height: auto;" loading="lazy">
         </a>
         <button class="mobile-menu-close" id="mobileClose" type="button" aria-label="Fechar menu">
             <i class="fa-solid fa-xmark"></i>

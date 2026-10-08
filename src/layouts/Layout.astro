@@ -154,16 +154,18 @@ if (type === 'article') {
       <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
     ))}
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Otimizado: apenas pesos utilizados, sem Space Mono não utilizado) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome (Carregamento assíncrono não-bloqueante para acelerar FCP no mobile) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
 
     <!-- CSS Dependencies -->
     <link rel="stylesheet" href="/assets/css/style.css" />
@@ -187,16 +189,16 @@ if (type === 'article') {
     <!-- Footer Component -->
     <Footer />
 
-    <!-- Scripts CDN -->
+    <!-- Scripts CDN (Deferidos para não bloquear a renderização no mobile) -->
     <!-- GSAP -->
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Lenis Smooth Scroll -->
-    <script is:inline src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script is:inline defer src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <!-- Vanilla Tilt -->
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
     <!-- Main Logic -->
-    <script is:inline src="/assets/js/main.js"></script>
+    <script is:inline defer src="/assets/js/main.js"></script>
   </body>
 </html>
