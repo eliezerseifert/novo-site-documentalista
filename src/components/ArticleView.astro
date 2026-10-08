@@ -15,6 +15,12 @@ const otherPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 <Layout
     title={`${post.title} - Blog Documentalista`}
     description={post.excerpt}
+    canonicalUrl={`https://documentalista.com.br/blog/${post.slug}`}
+    image={post.image}
+    type="article"
+    articleDate={post.date}
+    articleAuthor={post.author}
+    keywords={post.tags && post.tags.length > 0 ? post.tags.join(', ') : 'despachante de veículos, blog documentalista, gestão de despachante'}
 >
     <main class="article-page">
         <article class="article-container">
@@ -24,12 +30,21 @@ const otherPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
                     <i class="fa-solid fa-arrow-left"></i> Voltar para todos os artigos
                 </a>
 
-                <nav class="breadcrumb" aria-label="Breadcrumb">
-                    <a href="/">Início</a>
+                <nav class="breadcrumb" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="/" itemprop="item"><span itemprop="name">Início</span></a>
+                        <meta itemprop="position" content="1" />
+                    </span>
                     <span>/</span>
-                    <a href="/blog">Blog</a>
+                    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
+                        <meta itemprop="position" content="2" />
+                    </span>
                     <span>/</span>
-                    <span class="breadcrumb-current">{post.category}</span>
+                    <span class="breadcrumb-current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">{post.category}</span>
+                        <meta itemprop="position" content="3" />
+                    </span>
                 </nav>
             </div>
 

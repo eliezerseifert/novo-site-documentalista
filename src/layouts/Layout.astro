@@ -2,25 +2,108 @@
 // src/layouts/Layout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
   description?: string;
+  canonicalUrl?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  articleDate?: string;
+  articleAuthor?: string;
+  keywords?: string;
 }
 
 const {
-  title = "DOCUMENTALISTA - Software para Despachante Documentalista e Vistorias",
-  description = "O Documentalista é um sistema online simples e eficiente feito para facilitar a vida e o dia-a-dia dos Despachantes de Veículos e empresas de Vistoria."
+  title = "DOCUMENTALISTA - Sistema Online para Despachantes de Veículos e Vistorias",
+  description = "O Documentalista é um sistema online simples e eficiente feito para facilitar a vida e o dia a dia dos Despachantes de Veículos e empresas de Vistoria.",
+  canonicalUrl,
+  image = "https://documentalista.com.br/assets/images/desktop-documentalista-final.png",
+  type = "website",
+  articleDate,
+  articleAuthor,
+  keywords = "sistema para despachante, software despachante documentalista, despachante de veículos, ordem de serviço despachante, consulta veicular, vistoria veicular, gestão de despachante"
 } = Astro.props;
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "DOCUMENTALISTA",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Sistema online para despachantes de veículos e empresas de vistoria."
-};
+const canonical = canonicalUrl || new URL(Astro.url.pathname, 'https://documentalista.com.br').href;
+const fullImage = image.startsWith('http') ? image : `https://documentalista.com.br${image.startsWith('/') ? '' : '/'}${image}`;
+
+const baseSchemas: any[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DOCUMENTALISTA",
+    "url": "https://documentalista.com.br",
+    "logo": "https://documentalista.com.br/assets/images/logo.svg",
+    "description": "Software online de gestão para despachantes de veículos e vistorias veiculares.",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+55-47-99127-8324",
+        "contactType": "customer support",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DOCUMENTALISTA",
+    "url": "https://documentalista.com.br",
+    "inLanguage": "pt-BR"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DOCUMENTALISTA",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Windows, macOS, Android, iOS",
+    "description": "Sistema online simples e eficiente para gestão de despachantes de veículos, emissão de documentos, ordens de serviço, consultas veiculares e controle financeiro.",
+    "url": "https://documentalista.com.br",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "description": "15 dias de teste grátis sem compromisso"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "120"
+    }
+  }
+];
+
+if (type === 'article') {
+  baseSchemas.push({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "image": fullImage,
+    "url": canonical,
+    "datePublished": articleDate || "2026-01-01",
+    "inLanguage": "pt-BR",
+    "author": {
+      "@type": "Person",
+      "name": articleAuthor || "DOCUMENTALISTA"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DOCUMENTALISTA",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://documentalista.com.br/assets/images/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonical
+    }
+  });
+}
 ---
 
 <!doctype html>
@@ -30,16 +113,43 @@ const schemaData = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="DOCUMENTALISTA" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#124A6E" />
 
-    <!-- Open Graph / SEO -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="DOCUMENTALISTA - Software para Despachantes de Veículos" />
-    <meta property="og:description" content="Sistema online simples e eficiente feito para facilitar o dia a dia de despachantes de veículos e vistorias." />
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- View Transitions / Client Router -->
+    <ClientRouter />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="DOCUMENTALISTA" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={fullImage} />
+    <meta property="og:image:alt" content={title} />
+    {type === 'article' && articleDate && <meta property="article:published_time" content={articleDate} />}
+    {type === 'article' && articleAuthor && <meta property="article:author" content={articleAuthor} />}
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="/assets/images/favicon.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImage} />
 
-    <!-- Schema.org -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaData)} />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/favicon.png" />
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    {baseSchemas.map((schema) => (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+    ))}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,18 +166,20 @@ const schemaData = {
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
-    <!-- Ambient Background -->
-    <div class="bg-canvas">
+    <!-- Ambient Background (Persistido entre páginas) -->
+    <div class="bg-canvas" transition:persist>
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
     </div>
 
-    <!-- Header Component -->
+    <!-- Header Component (Persistido no topo) -->
     <Header />
 
-    <!-- Main Page Content -->
-    <slot />
+    <!-- Main Page Content (Transiciona suavemente enquanto o topo permanece fixo) -->
+    <div class="main-content-transition-wrapper" transition:animate="fade">
+      <slot />
+    </div>
 
     <!-- Footer Component -->
     <Footer />

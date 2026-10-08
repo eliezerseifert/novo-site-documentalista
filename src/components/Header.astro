@@ -3,7 +3,7 @@
 import Button from './Button.astro';
 ---
 
-<header class="header" id="header">
+<header class="header" id="header" transition:persist>
     <div class="container header-inner">
         <a href="/" class="logo" aria-label="DOCUMENTALISTA Home">
             <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" style="width: 250px; height: auto;">
@@ -29,9 +29,9 @@ import Button from './Button.astro';
 </header>
 
 <!-- Mobile Navigation Drawer & Backdrop -->
-<div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true" transition:persist></div>
 
-<aside class="mobile-menu-drawer" id="mobileMenuDrawer" aria-label="Menu de Navegação Mobile" aria-hidden="true">
+<aside class="mobile-menu-drawer" id="mobileMenuDrawer" aria-label="Menu de Navegação Mobile" aria-hidden="true" transition:persist>
     <div class="mobile-menu-header">
         <a href="/" class="logo" aria-label="DOCUMENTALISTA Home">
             <img src="/assets/images/logo.svg" alt="DOCUMENTALISTA Logo" style="width: 180px; height: auto;">

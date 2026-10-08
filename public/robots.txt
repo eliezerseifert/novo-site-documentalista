@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://documentalista.com.br/sitemap.xml

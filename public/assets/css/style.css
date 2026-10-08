@@ -53,6 +53,11 @@
         a { text-decoration: none; }
         button { border: none; background: none; cursor: pointer; font-family: inherit; }
 
+        .main-content-transition-wrapper {
+            display: block;
+            width: 100%;
+        }
+
         /* Focus styles for accessibility */
         :focus-visible {
             outline: 2px solid var(--color-primary);
