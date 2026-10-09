@@ -154,13 +154,33 @@ if (type === 'article') {
       <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
     ))}
 
-    <!-- Google Fonts (Otimizado: apenas pesos utilizados, sem Space Mono não utilizado) -->
+    <!-- Preload Critical LCP Hero Images -->
+    <link rel="preload" as="image" href="/assets/images/Deskto-hero-documentalista-mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/images/Deskto-hero-documentalista.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
+
+    <!-- CDN & Fonts Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Google Fonts (Carregamento assíncrono para eliminar render-blocking e acelerar FCP) -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      />
+    </noscript>
 
     <!-- Font Awesome (Carregamento assíncrono não-bloqueante para acelerar FCP no mobile) -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
@@ -168,6 +188,7 @@ if (type === 'article') {
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
 
     <!-- CSS Dependencies -->
+    <link rel="preload" href="/assets/css/style.css" as="style" />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
