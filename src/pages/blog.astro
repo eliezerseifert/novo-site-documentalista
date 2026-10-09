@@ -74,10 +74,6 @@ import { blogPosts } from '../data/blogPosts';
                                 </p>
 
                                 <div class="blog-card-footer">
-                                    <div class="author-info">
-                                        <i class="fa-solid fa-user-pen"></i>
-                                        <span>{post.author}</span>
-                                    </div>
                                     <a href={`/blog/${post.slug}`} class="read-more-link">
                                         Ler artigo <i class="fa-solid fa-arrow-right"></i>
                                     </a>
@@ -333,24 +329,11 @@ import { blogPosts } from '../data/blogPosts';
 
     .blog-card-footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
         border-top: 1px solid rgba(18, 74, 110, 0.08);
         padding-top: 1.25rem;
         margin-top: auto;
-    }
-
-    .author-info {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--color-secondary);
-    }
-
-    .author-info i {
-        color: var(--color-primary);
     }
 
     .read-more-link {

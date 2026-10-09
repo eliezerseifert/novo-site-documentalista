@@ -54,13 +54,6 @@ const otherPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
                 <h1 class="article-title">{post.title}</h1>
 
                 <div class="article-meta">
-                    <div class="meta-item author">
-                        <div class="author-avatar">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <span>Por <strong>{post.author}</strong></span>
-                    </div>
-                    <span class="meta-divider">•</span>
                     <div class="meta-item">
                         <i class="fa-regular fa-calendar"></i>
                         <span>{post.date}</span>
@@ -93,18 +86,7 @@ const otherPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
                 </div>
             )}
 
-            <!-- Autor Box -->
-            <div class="author-card">
-                <div class="author-card-avatar">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-                <div class="author-card-info">
-                    <h3>{post.author}</h3>
-                    <p>
-                        Especialista no mercado veicular e tecnologia para despachantes de veículos e vistorias. Dedicado a simplificar rotinas burocráticas através de soluções digitais.
-                    </p>
-                </div>
-            </div>
+
 
             <!-- CTA no Artigo -->
             <div class="article-cta-box">
@@ -356,6 +338,20 @@ const otherPosts = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
         font-style: italic;
         color: var(--color-secondary);
         line-height: 1.6;
+    }
+
+    .article-body :global(a) {
+        color: var(--color-primary);
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-color: rgba(61, 181, 180, 0.45);
+        text-underline-offset: 3px;
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .article-body :global(a:hover) {
+        color: var(--color-secondary);
+        text-decoration-color: var(--color-secondary);
     }
 
     /* Tags */
