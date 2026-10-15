@@ -24,7 +24,7 @@
                     <li><a href="/#planos">Planos e Preços</a></li>
                     <li><a href="/#faq">Perguntas Frequentes</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="https://documentalista.com.br/politica-de-privacidade-documentalista/" target="_blank">Política de Privacidade</a></li>
+                    <li><a href="https://documentalista.com.br/politica-de-privacidade-documentalista/" target="_blank" rel="noopener noreferrer">Política de Privacidade & LGPD</a></li>
                 </ul>
             </div>
 
@@ -53,8 +53,72 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Documentalista. Todos os direitos reservados.</p>
+            <div class="footer-legal">
+                <p>&copy; 2026 Documentalista. Todos os direitos reservados.</p>
+                <p class="footer-company">E-FLIPS TECNOLOGIA LTDA - 11.438.310/0001-09</p>
+                <div class="footer-lgpd-actions">
+                    <a href="https://documentalista.com.br/politica-de-privacidade-documentalista/" target="_blank" rel="noopener noreferrer" class="footer-lgpd-btn">
+                        <i class="fa-solid fa-shield-halved"></i> Política de Privacidade & LGPD
+                    </a>
+                    <button type="button" class="footer-lgpd-btn" data-open-lgpd>
+                        <i class="fa-solid fa-cookie-bite"></i> Preferências de Cookies
+                    </button>
+                </div>
+            </div>
             <p>Feito com 💙 para Despachantes de Veículos.</p>
         </div>
     </div>
 </footer>
+
+<style>
+    .footer-legal {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+    .footer-company {
+        font-size: 0.8rem;
+        color: #94a3b8;
+    }
+    .footer-lgpd-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-top: 0.25rem;
+    }
+    .footer-lgpd-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 9999px;
+        padding: 0.35rem 0.85rem;
+        font-size: 0.76rem;
+        font-weight: 600;
+        color: var(--color-secondary, #124A6E);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        font-family: inherit;
+    }
+    .footer-lgpd-btn:hover {
+        background: rgba(61, 181, 180, 0.12);
+        border-color: var(--color-primary, #3DB5B4);
+        color: var(--color-primary, #3DB5B4);
+        transform: translateY(-1px);
+    }
+    .footer-lgpd-btn i {
+        font-size: 0.8rem;
+    }
+    @media (max-width: 768px) {
+        .footer-legal {
+            align-items: center;
+            text-align: center;
+        }
+        .footer-lgpd-actions {
+            justify-content: center;
+        }
+    }
+</style>

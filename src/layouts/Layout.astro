@@ -2,6 +2,8 @@
 // src/layouts/Layout.astro
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LgpdConsent from '../components/LgpdConsent.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { ClientRouter } from 'astro:transitions';
 
 interface Props {
@@ -109,6 +111,9 @@ if (type === 'article') {
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17497293985"></script>
     <script is:inline>
@@ -139,14 +144,58 @@ if (type === 'article') {
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '256280303940598');
       fbq('track', 'PageView');
+
+      // Rastrear PageView em navegações do Astro (View Transitions)
+      document.addEventListener('astro:page-load', function() {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'PageView');
+        }
+      });
+
+      // Rastreamento automático de cliques nos botões de Experimente / Teste 15 dias grátis
+      document.addEventListener('click', function(e) {
+        var target = e.target && e.target.closest ? e.target.closest('a, button') : null;
+        if (!target) return;
+
+        var href = (target.getAttribute('href') || '').toLowerCase();
+        var text = (target.textContent || '').trim().toLowerCase();
+
+        var isRegisterLink = href.indexOf('app.documentalista.com.br/register') !== -1 || href.indexOf('/register') !== -1;
+        var isTrialText = text.indexOf('15 dias') !== -1 || text.indexOf('experimente') !== -1 || text.indexOf('testar') !== -1;
+
+        if (isRegisterLink || isTrialText) {
+          if (typeof window.fbq === 'function') {
+            // Evento padrão Lead: essencial para otimização de campanhas de conversão no Meta Ads
+            window.fbq('track', 'Lead', {
+              content_name: target.textContent.trim() || 'Teste 15 dias grátis',
+              content_category: 'Cadastro Grátis',
+              currency: 'BRL',
+              value: 0.00
+            });
+
+            // Evento personalizado para acompanhamento específico no Gerenciador de Eventos
+            window.fbq('trackCustom', 'CliqueTeste15Dias', {
+              button_text: target.textContent.trim(),
+              destination: target.getAttribute('href') || '',
+              page_location: window.location.href
+            });
+          }
+
+          // Integração complementar com o dataLayer para Google Ads / Analytics
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'conversion_lead_click',
+              button_text: target.textContent.trim()
+            });
+          }
+        }
+      }, true);
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=256280303940598&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
@@ -251,6 +300,12 @@ if (type === 'article') {
 
     <!-- Footer Component -->
     <Footer />
+
+    <!-- LGPD & Cookie Consent Banner Component -->
+    <LgpdConsent />
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <WhatsAppButton />
 
     <!-- Scripts CDN (Deferidos para não bloquear a renderização no mobile) -->
     <!-- GSAP -->
