@@ -318,5 +318,46 @@ if (type === 'article') {
 
     <!-- Main Logic -->
     <script is:inline defer src="/assets/js/main.js"></script>
+
+    <!-- UTM & Attribution Persistence (Rastreamento de campanhas e cliques) -->
+    <script is:inline>
+      (function () {
+        var KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
+        var STORE = 'doc_utms';
+        var params = new URLSearchParams(window.location.search);
+        var saved = {};
+        try { saved = JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) {}
+
+        var hasNew = KEYS.some(function (k) { return params.get(k); });
+        if (hasNew) {
+          saved = {};
+          KEYS.forEach(function (k) { if (params.get(k)) saved[k] = params.get(k); });
+          try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {}
+        }
+        if (!Object.keys(saved).length) return;
+
+        function tag(a) {
+          try {
+            var url = new URL(a.href, window.location.href);
+            if (url.hostname !== 'app.documentalista.com.br') return;
+            Object.keys(saved).forEach(function (k) {
+              if (!url.searchParams.get(k)) url.searchParams.set(k, saved[k]);
+            });
+            a.href = url.toString();
+          } catch (e) {}
+        }
+
+        function applyTags() {
+          document.querySelectorAll('a[href]').forEach(tag);
+        }
+
+        applyTags();
+        document.addEventListener('astro:page-load', applyTags);
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a[href]');
+          if (a) tag(a);
+        }, true);
+      })();
+    </script>
   </body>
 </html>
