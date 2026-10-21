@@ -94,6 +94,7 @@ import Button from '../components/Button.astro';
                 <div class="features-tabs-nav scroll-anim">
                     <button class="tab-btn active" data-tab="tab-cadastros">Cadastros</button>
                     <button class="tab-btn" data-tab="tab-os">Ordens de Serviço</button>
+                    <button class="tab-btn" data-tab="tab-gerador-documentos">Gerador de Documentos</button>
                     <button class="tab-btn" data-tab="tab-documentos">Documentos & Recibos</button>
                     <button class="tab-btn" data-tab="tab-financeiro">Financeiro</button>
                     <button class="tab-btn" data-tab="tab-relatorios">Relatórios</button>
@@ -135,13 +136,58 @@ import Button from '../components/Button.astro';
                                 <li><i class="fa-solid fa-circle-check"></i> Emissão rápida de Ordens de Serviço personalizadas</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Controle de prazos, taxas e etapas do processo</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Histórico transparente para o atendimento do seu escritório</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Digitalize os documentos no sistema ou envie o link para que seu cliente faça o envio.</li>
+                            </ul>
+                            <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
+                        </div>
+                        <div class="tab-visual-side tab-carousel" id="osCarousel" aria-roledescription="carousel" aria-label="Imagens de Ordens de Serviço e Digitalização">
+                            <div class="tab-carousel-track">
+                                <div class="tab-carousel-slide active" data-slide-index="0" aria-label="Tela de Gestão de Ordens de Serviço">
+                                    <picture>
+                                        <source srcset="/assets/images/ordens-de-servico.webp" type="image/webp">
+                                        <img src="/assets/images/ordens-de-servico.png" alt="Controle e emissão de ordens de serviço para despachantes de veículos" width="800" height="457" loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                                <div class="tab-carousel-slide" data-slide-index="1" aria-label="Tela de Digitalização de Documentos e Envio pelo Cliente">
+                                    <picture>
+                                        <source srcset="/assets/images/digitalizacao-de-documentos.webp" type="image/webp">
+                                        <img src="/assets/images/digitalizacao-de-documentos.jpg" alt="Digitalização de documentos no sistema ou envio de link para o cliente" width="1000" height="519" loading="lazy" decoding="async">
+                                    </picture>
+                                </div>
+                            </div>
+
+                            <!-- Controles e Indicadores de Transição Automática -->
+                            <div class="tab-carousel-controls" role="tablist" aria-label="Alternar imagens">
+                                <button type="button" class="tab-carousel-pill active" data-slide-target="0" role="tab" aria-selected="true" aria-label="Ver imagem de Ordem de Serviço">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                    <span>Ordem de Serviço</span>
+                                </button>
+                                <button type="button" class="tab-carousel-pill" data-slide-target="1" role="tab" aria-selected="false" aria-label="Ver imagem de Digitalização de Documentos">
+                                    <i class="fa-solid fa-camera"></i>
+                                    <span>Digitalização de Documentos</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Gerador de Documentos -->
+                    <div class="tab-panel" id="tab-gerador-documentos">
+                        <div class="tab-text-side">
+                            <h3>📑 Gerador de Documentos em PDF</h3>
+                            <p>
+                                Crie <strong>procurações e declarações em PDF</strong> em segundos, aproveitando automaticamente os dados já cadastrados de clientes e veículos. Ganhe agilidade e <strong>imprima ou anexe direto à Ordem de Serviço (OS)</strong> sem retrabalho.
+                            </p>
+                            <ul class="tab-topics-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Preenchimento automático com dados de clientes e veículos cadastrados</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Modelos de procurações, declarações de endereço, motor e muito mais</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Impressão rápida ou anexo direto à Ordem de Serviço (OS)</li>
                             </ul>
                             <Button href="https://app.documentalista.com.br/register" target="_blank" variant="primary">Testar 15 dias grátis</Button>
                         </div>
                         <div class="tab-visual-side">
                             <picture>
-                                <source srcset="/assets/images/ordens-de-servico.webp" type="image/webp">
-                                <img src="/assets/images/ordens-de-servico.png" alt="Controle e emissão de ordens de serviço para despachantes de veículos" width="800" height="457" loading="lazy" decoding="async">
+                                <source srcset="/assets/images/gerador-de-pdf.webp" type="image/webp">
+                                <img src="/assets/images/gerador-de-pdf.jpg" alt="Mapeamento e criação de procurações e declarações em PDF no software Documentalista" width="800" height="460" loading="lazy" decoding="async">
                             </picture>
                         </div>
                     </div>
@@ -265,10 +311,10 @@ import Button from '../components/Button.astro';
                         </div>
 
                         <div class="consulta-item">
-                            <div class="consulta-icon"><i class="fa-solid fa-barcode"></i></div>
+                            <div class="consulta-icon"><i class="fa-solid fa-key"></i></div>
                             <div class="consulta-info">
-                                <h3>Consulta Número do Motor</h3>
-                                <span>Validação completa de motor e chassi</span>
+                                <h3>Código de Segurança</h3>
+                                <span>Senha alfanumérica de validação do CRV.</span>
                             </div>
                         </div>
 
@@ -281,18 +327,18 @@ import Button from '../components/Button.astro';
                         </div>
 
                         <div class="consulta-item">
-                            <div class="consulta-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <div class="consulta-icon"><i class="fa-solid fa-file-circle-check"></i></div>
                             <div class="consulta-info">
-                                <h3>Consulta Veicular Completa <span class="tag-em-breve">Em breve</span></h3>
-                                <span>Histórico de débitos, multas e proprietários</span>
+                                <h3>Laudo Completo</h3>
+                                <span>Histórico completo: restrições, débitos, gravame, leilão, sinistro, roubo e furto, recall, valor de mercado e pendências financeiras e judiciais do proprietário.</span>
                             </div>
                         </div>
 
                         <div class="consulta-item">
-                            <div class="consulta-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="consulta-icon"><i class="fa-solid fa-car"></i></div>
                             <div class="consulta-info">
-                                <h3>Comunicado de Venda <span class="tag-em-breve">Em breve</span></h3>
-                                <span>Notificação imediata e alertas de processos</span>
+                                <h3>Dados do Veículo</h3>
+                                <span>Dados do veículo e do proprietário na base nacional, com restrições.</span>
                             </div>
                         </div>
                     </div>
@@ -877,3 +923,210 @@ import Button from '../components/Button.astro';
         </section>
     </main>
 </Layout>
+
+<style>
+    /* Alinhamento dos itens de consulta com descrições detalhadas */
+    .consulta-item {
+        align-items: flex-start;
+    }
+    .consulta-icon {
+        margin-top: 3px;
+    }
+
+    /* Tab Visual Carousel */
+    .tab-carousel {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tab-carousel-track {
+        display: grid;
+        grid-template-areas: "slide";
+        width: 100%;
+        position: relative;
+    }
+
+    .tab-carousel-slide {
+        grid-area: slide;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(6px) scale(0.985);
+        transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .tab-carousel-slide.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+        z-index: 2;
+    }
+
+    .tab-carousel-slide picture,
+    .tab-carousel-slide img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 12px;
+        display: block;
+        box-shadow: -10px 15px 35px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Controles e Indicadores de Transição */
+    .tab-carousel-controls {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(18, 74, 110, 0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        padding: 0.35rem 0.45rem;
+        border-radius: 9999px;
+        box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: calc(100% - 2rem);
+    }
+
+    .tab-carousel-pill {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.45rem 1rem;
+        border-radius: 9999px;
+        border: none;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.82rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        white-space: nowrap;
+    }
+
+    .tab-carousel-pill:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.14);
+    }
+
+    .tab-carousel-pill.active {
+        background: var(--color-primary);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(61, 181, 180, 0.45);
+    }
+
+    .tab-carousel-pill i {
+        font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+        .tab-carousel-controls {
+            bottom: 0.85rem;
+            padding: 0.25rem 0.35rem;
+            gap: 0.35rem;
+        }
+
+        .tab-carousel-pill {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.74rem;
+            gap: 0.35rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .tab-carousel-pill span {
+            font-size: 0.7rem;
+        }
+    }
+</style>
+
+<script is:inline>
+    (function() {
+        let carouselTimer = null;
+        const AUTOPLAY_INTERVAL = 4500;
+
+        function initOsCarousel() {
+            if (carouselTimer) {
+                clearInterval(carouselTimer);
+                carouselTimer = null;
+            }
+
+            const carousel = document.getElementById('osCarousel');
+            if (!carousel) return;
+
+            const slides = carousel.querySelectorAll('.tab-carousel-slide');
+            const pills = carousel.querySelectorAll('.tab-carousel-pill');
+            if (!slides.length || !pills.length) return;
+
+            let currentIndex = 0;
+            let isPaused = false;
+
+            function goToSlide(index) {
+                currentIndex = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => {
+                    if (i === currentIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                pills.forEach((pill, i) => {
+                    const isActive = i === currentIndex;
+                    pill.classList.toggle('active', isActive);
+                    pill.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+            }
+
+            function nextSlide() {
+                if (!isPaused) {
+                    goToSlide(currentIndex + 1);
+                }
+            }
+
+            pills.forEach((pill) => {
+                pill.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetIndex = parseInt(pill.getAttribute('data-slide-target') || '0', 10);
+                    goToSlide(targetIndex);
+                    if (carouselTimer) {
+                        clearInterval(carouselTimer);
+                    }
+                    carouselTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+                });
+            });
+
+            carousel.addEventListener('mouseenter', () => {
+                isPaused = true;
+            });
+            carousel.addEventListener('mouseleave', () => {
+                isPaused = false;
+            });
+            carousel.addEventListener('touchstart', () => {
+                isPaused = true;
+            }, { passive: true });
+            carousel.addEventListener('touchend', () => {
+                setTimeout(() => { isPaused = false; }, 3000);
+            }, { passive: true });
+
+            carouselTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+        }
+
+        document.addEventListener('astro:page-load', initOsCarousel);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOsCarousel);
+        } else {
+            initOsCarousel();
+        }
+    })();
+</script>
+
