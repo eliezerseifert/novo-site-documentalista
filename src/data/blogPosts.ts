@@ -16,6 +16,60 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 7,
+    slug: "gerador-de-documentos-em-pdf-para-despachante",
+    title: "Gerador de Documentos em PDF: Mais Agilidade para o Despachante Documentalista",
+    excerpt: "Crie procurações, declarações e outros documentos em PDF em segundos, aproveitando os dados já cadastrados no sistema. Conheça o Gerador de Documentos do Documentalista.",
+    category: "Novidades",
+    date: "24 de Outubro de 2025",
+    author: "DOCUMENTALISTA",
+    image: "/assets/images/blog/gerador-de-documentos-pdf.jpg",
+    readTime: "4 min de leitura",
+    tags: ["PDF", "Gerador de Documentos", "Produtividade", "Novidades", "Procuração"],
+    content: `
+      <p class="lead">Preparar documentos manualmente é uma das tarefas que mais consome tempo em um escritório de <a href="https://www.documentalista.com.br/" title="Despachante de Veículos - Documentalista">despachante de veículos</a>. Pensando nisso, o <strong>Documentalista</strong> lançou o <strong>Gerador de Documentos em PDF</strong>, um recurso poderoso que transforma dados já existentes no sistema em documentos prontos para uso em segundos.</p>
+
+      <h2>O que é o Gerador de Documentos?</h2>
+      <p>O Gerador de Documentos é um módulo integrado ao <a href="https://www.documentalista.com.br/" title="Sistema para Despachantes - Documentalista">sistema para despachantes</a> que permite criar, com poucos cliques, documentos em PDF utilizados no dia a dia do escritório, como:</p>
+      <ul>
+        <li><strong>Procurações:</strong> documentos essenciais para representar clientes perante órgãos de trânsito.</li>
+        <li><strong>Declarações de Mudança:</strong> comprovantes para regularização de endereço nos cadastros veiculares.</li>
+        <li><strong>Declarações de Endereço:</strong> documentos de comprovação de residência do proprietário.</li>
+        <li><strong>Declarações de Mudança de Motor:</strong> registros formais de substituição de motor do veículo.</li>
+        <li><strong>Outros documentos</strong> frequentemente exigidos nos processos de transferência e regularização veicular.</li>
+      </ul>
+
+      <h2>Como Funciona na Prática?</h2>
+      <p>A grande vantagem do recurso está na inteligência do sistema: o <strong>Gerador de Documentos aproveita automaticamente os dados de clientes e veículos já cadastrados</strong> no Documentalista. Isso significa que você não precisa redigitar nome, CPF, endereço, placa, RENAVAM ou qualquer outra informação — tudo é preenchido de forma automática, evitando erros humanos e economizando minutos preciosos em cada atendimento.</p>
+
+      <blockquote>
+        "Chega de copiar e colar dados entre abas ou procurar modelos salvos em pastas desorganizadas. O documento certo, com os dados corretos, gerado em instantes."
+      </blockquote>
+
+      <h2>Integração Direta com a Ordem de Serviço</h2>
+      <p>Após a geração do arquivo em PDF, o sistema permite que você tome uma das duas ações com praticidade total:</p>
+      <ul>
+        <li><strong>Imprimir diretamente:</strong> envie o documento para a impressora sem precisar abrir outro aplicativo.</li>
+        <li><strong>Anexar à Ordem de Serviço (OS):</strong> vincule o PDF gerado diretamente à OS do cliente, mantendo todo o histórico do processo organizado e acessível em um único lugar.</li>
+      </ul>
+      <p>Essa integração garante rastreabilidade completa: qualquer colaborador do escritório consegue visualizar os documentos anexados à OS sem precisar perguntar "onde está o arquivo?".</p>
+
+      <h2>Benefícios Reais para o Escritório</h2>
+      <ul>
+        <li><strong>Mais agilidade:</strong> reduza em até 80% o tempo gasto na elaboração de documentos rotineiros.</li>
+        <li><strong>Menos erros:</strong> dados puxados do cadastro eliminam a digitação manual e os equívocos de grafia.</li>
+        <li><strong>Mais organização:</strong> documentos centralizados na OS facilitam a consulta, o acompanhamento e a auditoria de processos.</li>
+        <li><strong>Menos trabalho manual:</strong> sua equipe foca no atendimento ao cliente, e não em papelada.</li>
+        <li><strong>Padronização:</strong> todos os documentos seguem o mesmo modelo profissional, fortalecendo a imagem do escritório.</li>
+      </ul>
+
+      <h2>Quem pode usar?</h2>
+      <p>O Gerador de Documentos está disponível para todos os clientes do plano <a href="https://www.documentalista.com.br/" title="Sistema para Despachantes Online - Documentalista">Documentalista</a>. Basta acessar a Ordem de Serviço do cliente desejado e acionar o recurso. Não é necessário instalar nenhum software adicional — tudo funciona direto no navegador, em qualquer dispositivo.</p>
+
+      <p>Experimente agora e descubra como pequenas mudanças nos processos do escritório geram grandes ganhos de produtividade. O <a href="https://www.documentalista.com.br/" title="Documentalista - Sistema para Despachantes de Veículos">Documentalista</a> continua evoluindo para deixar a rotina do despachante cada vez mais simples, organizada e eficiente.</p>
+    `
+  },
+  {
     id: 1,
     slug: "como-melhorar-a-gestao-do-meu-escritorio-de-despachante-de-veiculos",
     title: "Como melhorar a Gestão do meu Escritório de Despachante de Veículos?",

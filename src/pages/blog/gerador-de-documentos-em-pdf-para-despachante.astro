@@ -1,0 +1,9 @@
+---
+// src/pages/blog/gerador-de-documentos-em-pdf-para-despachante.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'gerador-de-documentos-em-pdf-para-despachante')!;
+---
+
+<ArticleView post={post} />
