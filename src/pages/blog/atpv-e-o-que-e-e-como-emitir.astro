@@ -1,0 +1,9 @@
+---
+// src/pages/blog/atpv-e-o-que-e-e-como-emitir.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'atpv-e-o-que-e-e-como-emitir')!;
+---
+
+<ArticleView post={post} />

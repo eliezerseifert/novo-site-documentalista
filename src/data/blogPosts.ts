@@ -16,6 +16,94 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 8,
+    slug: "atpv-e-o-que-e-e-como-emitir",
+    title: "ATPV-e: o que é e como emitir passo a passo",
+    excerpt: "Vendeu um veículo? Desde 2021, o antigo DUT deu lugar à ATPV-e, a Autorização para Transferência de Propriedade do Veículo em formato eletrônico. Entenda o que é, quem pode emitir e os prazos.",
+    category: "Legislação",
+    date: "26 de Outubro de 2025",
+    author: "DOCUMENTALISTA",
+    image: "/assets/images/blog/atpv-e-transferencia-veiculo.jpg",
+    readTime: "7 min de leitura",
+    tags: ["ATPV-e", "Transferência de Veículo", "CRV", "DETRAN", "Documentação"],
+    content: `
+      <p class="lead">Vendeu um veículo, ou está cuidando da venda de um cliente? Desde 2021, o antigo DUT, que ficava no verso do CRV em papel, deu lugar à <strong>ATPV-e</strong>, a Autorização para Transferência de Propriedade do Veículo em formato eletrônico. Neste guia você vai entender o que é a ATPV-e, quem pode emitir, quais dados são necessários, os dois caminhos de assinatura e os prazos que vendedor e comprador precisam cumprir.</p>
+
+      <h2>O que é a ATPV-e</h2>
+      <p>A ATPV-e é o documento que autoriza a transferência de propriedade de um veículo de um dono para outro. Ela foi criada pela <strong>Resolução Contran nº 809/2020</strong> e passou a valer para os documentos emitidos a partir de 1º de janeiro de 2021. Na prática, ela cumpre o papel que antes era do verso do CRV: registrar quem vende, quem compra, o valor e a data da venda.</p>
+      <p>A diferença é que os dados ficam no sistema do Detran e da Senatran, e não só num papel. Isso reduz fraudes, evita rasuras e permite que a venda seja feita pelo celular, com assinatura digital.</p>
+      <p><em>Veículos que ainda têm o CRV antigo em papel, emitido antes de 2021, seguem as regras de transição do Detran de cada estado. Na dúvida, consulte o Detran onde o veículo está registrado.</em></p>
+
+      <h2>Quem emite a ATPV-e</h2>
+      <p>Quem inicia a ATPV-e é o <strong>vendedor</strong>, ou seja, o proprietário que aparece no documento do veículo. Ele pode fazer isso sozinho, pelo aplicativo, ou com a ajuda de um <a href="https://www.documentalista.com.br/" title="Despachante Documentalista - Documentalista">despachante documentalista</a>, que solicita a emissão junto ao Detran.</p>
+      <p>O comprador também participa: ele confere os dados e assina, seja pelo aplicativo, seja no papel com firma reconhecida.</p>
+
+      <h2>Dados necessários para emitir</h2>
+      <p>Antes de começar, separe estas informações. Um dado errado obriga a cancelar e refazer a autorização.</p>
+      <ul>
+        <li><strong>Do veículo:</strong> placa, Renavam e código de segurança do CRV;</li>
+        <li><strong>Do comprador:</strong> nome completo, CPF ou CNPJ, endereço completo com CEP e e-mail;</li>
+        <li><strong>Da venda:</strong> valor da negociação, data da venda e, em alguns estados, a quilometragem do hodômetro;</li>
+        <li><strong>Situação do veículo:</strong> sem bloqueios e com débitos em dia (IPVA, licenciamento e multas), conforme a regra do Detran do estado.</li>
+      </ul>
+
+      <h2>Caminho 1: venda digital pela Carteira Digital de Trânsito</h2>
+      <p>A Senatran oferece a venda digital dentro do aplicativo <strong>Carteira Digital de Trânsito (CDT)</strong>, disponível para Android e iPhone. Nesse caminho não é preciso ir ao cartório: a assinatura eletrônica substitui o reconhecimento de firma.</p>
+      <ol>
+        <li>O vendedor entra no app com a conta gov.br, que precisa ser nível prata ou ouro.</li>
+        <li>Em "Veículos", escolhe o veículo e a opção de venda.</li>
+        <li>Informa os dados do comprador e da negociação.</li>
+        <li>O comprador recebe o pedido no próprio app, confere os dados e assina, com biometria facial.</li>
+        <li>O vendedor também assina, e a venda fica registrada.</li>
+        <li>O comprador conclui a transferência no Detran do estado, incluindo a vistoria quando exigida.</li>
+      </ol>
+      <p><em>A venda digital depende de o veículo e o estado estarem habilitados no serviço, e a adesão dos Detrans foi gradual. Se a opção não aparecer no app, use o caminho 2.</em></p>
+
+      <blockquote>Você é despachante e emite ATPV-e toda semana? No <a href="https://www.documentalista.com.br/" title="Sistema para Despachantes - Documentalista">Documentalista</a>, a emissão da ATPV-e e a consulta do código de segurança do CRV ficam integradas à ordem de serviço, com os dados do cliente e do veículo já preenchidos. Teste 15 dias grátis, sem cartão.</blockquote>
+
+      <h2>Caminho 2: emissão pelo Detran ou pelo despachante</h2>
+      <p>Quando a venda digital não está disponível, ou quando o cliente não tem conta gov.br prata ou ouro, a ATPV-e é emitida pelo sistema do Detran. Em geral, o fluxo é este:</p>
+      <ol>
+        <li>O vendedor, ou o <a href="https://www.documentalista.com.br/" title="Despachante com Procuração - Documentalista">despachante com procuração</a>, solicita a ATPV-e informando os dados do comprador e da venda.</li>
+        <li>O Detran gera o documento em PDF.</li>
+        <li>Vendedor e comprador imprimem, assinam e reconhecem firma em cartório, conforme a exigência do estado.</li>
+        <li>Com o documento assinado, o comprador dá entrada na transferência.</li>
+      </ol>
+      <p>Esse caminho é o mais comum nos escritórios de despachante, porque permite atender quem não tem familiaridade com aplicativos. <strong>A regra exata de assinatura e reconhecimento de firma varia de estado para estado</strong>: confira no Detran.</p>
+
+      <h2>Prazos: o que o vendedor e o comprador precisam fazer</h2>
+      <table>
+        <thead>
+          <tr><th>Quem</th><th>Prazo</th><th>O que fazer</th><th>Base legal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Comprador</td><td>30 dias a partir da venda</td><td>Transferir o veículo para o seu nome</td><td>CTB, art. 123, § 1º</td></tr>
+          <tr><td>Vendedor</td><td>60 dias depois desse prazo</td><td>Comunicar a venda ao Detran, se o comprador não transferiu</td><td>CTB, art. 134</td></tr>
+        </tbody>
+      </table>
+      <p>O prazo do vendedor é o que mais gera problema. Sem a comunicação de venda, ele continua responsável pelas multas e pontos do veículo até regularizar. Na venda digital pela CDT, a comunicação é registrada no próprio fluxo. Em outros casos, guarde o comprovante e confira no Detran se a comunicação foi feita.</p>
+      <p>Para o comprador, não transferir no prazo é infração de trânsito (CTB, art. 233), além de deixar o documento no nome de outra pessoa.</p>
+
+      <h2>Erros comuns na ATPV-e</h2>
+      <ul>
+        <li><strong>Dados do comprador errados ou incompletos.</strong> CPF, nome ou endereço com erro obrigam a cancelar a autorização e emitir de novo.</li>
+        <li><strong>Valor de venda fora da realidade.</strong> O valor informado pode ser usado na cobrança de impostos em alguns estados. Informe o valor real.</li>
+        <li><strong>Veículo com gravame ou bloqueio.</strong> A ATPV-e não resolve financiamento nem restrição judicial. Quite e baixe o gravame antes.</li>
+        <li><strong>Débitos pendentes.</strong> IPVA, licenciamento e multas em aberto costumam impedir a transferência.</li>
+        <li><strong>Perder o prazo de 30 dias.</strong> Combine com o comprador quem vai cuidar da transferência e quando.</li>
+      </ul>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>A ATPV-e tem custo?</strong> A venda digital pelo aplicativo não tem custo de uso. As taxas de transferência e vistoria do Detran continuam sendo cobradas, e os valores mudam por estado.</p>
+      <p><strong>Dá para cancelar uma ATPV-e?</strong> Sim. Se houver erro ou desistência antes da transferência, a autorização pode ser cancelada no Detran ou no fluxo onde foi emitida.</p>
+      <p><strong>Posso vender um carro financiado com ATPV-e?</strong> A venda só é concluída depois de quitar o financiamento e baixar o gravame, ou com a anuência do banco credor, conforme a regra do Detran.</p>
+      <p><strong>Quem tem CRV em papel antigo precisa da ATPV-e?</strong> Depende da regra de transição do seu estado. Consulte o Detran onde o veículo está registrado.</p>
+      <p><strong>Depois da transferência, como fica o documento do comprador?</strong> Ele recebe o novo documento digital, o CRLV-e.</p>
+
+      <blockquote>O <a href="https://www.documentalista.com.br/" title="Documentalista - Sistema para Despachantes de Veículos">Documentalista</a> organiza as transferências do seu escritório do começo ao fim: cadastro do veículo pela placa, ordem de serviço com prazos, procuração em PDF, emissão da ATPV-e e controle financeiro. Teste 15 dias grátis ou fale com um especialista pelo WhatsApp.</blockquote>
+    `
+  },
+  {
     id: 7,
     slug: "gerador-de-documentos-em-pdf-para-despachante",
     title: "Gerador de Documentos em PDF: Mais Agilidade para o Despachante Documentalista",
