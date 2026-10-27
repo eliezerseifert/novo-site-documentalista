@@ -1,0 +1,9 @@
+---
+// src/pages/blog/solicitar-e-digitalizar-documentos-na-ordem-de-servico.astro
+import ArticleView from '../../components/ArticleView.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const post = blogPosts.find((p) => p.slug === 'solicitar-e-digitalizar-documentos-na-ordem-de-servico')!;
+---
+
+<ArticleView post={post} />

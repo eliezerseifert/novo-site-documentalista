@@ -16,6 +16,63 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 9,
+    slug: "solicitar-e-digitalizar-documentos-na-ordem-de-servico",
+    title: "Novo recurso do Documentalista para captura de documentos: solicite, digitalize e aprove direto na Ordem de Serviço",
+    excerpt: "Peça documentos ao cliente pela Área do Cliente, digitalize com a câmera do celular ou da webcam, acompanhe o que falta e aprove ou recuse cada arquivo, tudo dentro da OS.",
+    category: "Novidades",
+    date: "27 de Outubro de 2026",
+    author: "DOCUMENTALISTA",
+    image: "/assets/images/blog/digitalizar-e-solicitar-documentos.jpg",
+    readTime: "5 min de leitura",
+    tags: ["Digitalização", "Ordem de Serviço", "Área do Cliente", "Documentos", "Novidades"],
+    content: `
+      <p class="lead">Quantas vezes o cliente precisou ir até o escritório só para entregar a cópia de um RG ou de uma CNH? Agora isso não é mais necessário. O <strong>Documentalista</strong> lançou o recurso de <strong>solicitar e digitalizar documentos</strong> dentro da Ordem de Serviço (OS): você pede os documentos, o cliente envia pelo celular ou pelo computador, e você aprova ou recusa cada arquivo sem sair da OS.</p>
+
+      <h2>O que é o quadro Documentos</h2>
+      <p>Dentro de cada <a href="https://www.documentalista.com.br/" title="Sistema para Despachantes - Documentalista">ordem de serviço</a> existe agora o quadro <strong>Documentos</strong>, que reúne tudo o que o processo precisa. Por ele você pode:</p>
+      <ul>
+        <li><strong>Solicitar documentos ao cliente</strong>, que envia pela Área do Cliente usando o celular ou o computador;</li>
+        <li><strong>Aprovar ou recusar</strong> o que chegou;</li>
+        <li><strong>Tirar uma foto na hora</strong>, pela câmera do celular ou pela webcam;</li>
+        <li><strong>Anexar um arquivo</strong> do computador.</li>
+      </ul>
+
+      <h2>Passo a passo para solicitar documentos</h2>
+      <h3>1. Peça os documentos</h3>
+      <p>No quadro Documentos da OS, clique em <strong>Solicitar documentos</strong> e escreva o nome de cada item (por exemplo: CNH - frente, CNH - verso). Use <strong>Adicionar documento</strong> para incluir mais itens e clique em <strong>Enviar</strong>. O cliente verá um campo para cada item na Área do Cliente e poderá enviar uma foto ou um arquivo.</p>
+
+      <h3>2. Acompanhe o pedido</h3>
+      <p>Os itens aparecem em <strong>Solicitados ao cliente</strong> com o aviso <strong>Aguardando envio</strong>, até o cliente mandar. Assim você sabe, de relance, o que já chegou e o que ainda está pendente.</p>
+
+      <h3>3. Envie o link ao cliente</h3>
+      <p>No topo da OS, clique em <strong>Link para o cliente</strong>. Use <strong>Copiar</strong> ou os atalhos de <strong>WhatsApp</strong> e <strong>E-mail</strong> para mandar o acesso.</p>
+
+      <h2>O que o cliente faz</h2>
+      <p>Na Área do Cliente, ele vê o aviso de documentos pendentes, abre a OS e, em <strong>Documentos para enviar</strong>, usa <strong>Tirar foto</strong> ou <strong>Escolher arquivo</strong>. Depois de ajustar a imagem (recortar e girar, se precisar), toca em <strong>Enviar</strong>. O status muda para <strong>Em análise</strong>. São aceitas fotos JPG ou PNG, ou PDF, com tamanho máximo de 2 MB.</p>
+
+      <h2>Aprovar ou recusar</h2>
+      <p>O arquivo chega como <strong>Enviado pelo cliente</strong> e <strong>Aguardando aprovação</strong>. Confira a imagem e clique em <strong>Aprovar</strong> ou <strong>Recusar</strong>. Se a foto estiver ilegível, recuse e o cliente envia outra, sem retrabalho para o escritório.</p>
+
+      <h2>Digitalizar no próprio escritório</h2>
+      <p>Quando o cliente está na sua frente, clique em <strong>Tirar foto</strong>, permita o uso da câmera, enquadre e clique em <strong>Capturar</strong>. Ajuste a imagem, escolha o <strong>Tipo de documento</strong>, escreva a <strong>Descrição</strong> e clique em <strong>Salvar</strong>. A foto entra direto na OS.</p>
+
+      <h2>Anexar um arquivo</h2>
+      <p>Já tem o documento no computador? Clique em <strong>Anexar</strong>, escolha o <strong>Tipo de documento</strong> (Ordem de serviço ou Cliente), em <strong>Arquivo</strong> clique em <strong>Clique aqui</strong> (ou arraste o arquivo), escreva a <strong>Descrição</strong> e clique em <strong>Enviar</strong>.</p>
+
+      <h2>Vantagens para o escritório</h2>
+      <ul>
+        <li><strong>Menos idas ao escritório:</strong> o cliente envia a cópia de onde estiver.</li>
+        <li><strong>Controle do que falta:</strong> cada documento mostra se está aguardando envio, em análise ou aprovado.</li>
+        <li><strong>Mais organização:</strong> tudo fica anexado à OS, em um só lugar, para qualquer colaborador consultar.</li>
+        <li><strong>Menos retrabalho:</strong> você recusa na hora o que não está legível e pede de novo.</li>
+        <li><strong>Atendimento mais ágil:</strong> o processo começa mais cedo, com a documentação completa.</li>
+      </ul>
+
+      <p>O recurso já está disponível no <a href="https://www.documentalista.com.br/" title="Documentalista - Sistema para Despachantes de Veículos">Documentalista</a>. Abra uma ordem de serviço, localize o quadro Documentos e experimente na sua próxima demanda.</p>
+    `
+  },
+  {
     id: 8,
     slug: "atpv-e-o-que-e-e-como-emitir",
     title: "ATPV-e: o que é e como emitir passo a passo",
